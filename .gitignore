@@ -1,0 +1,14 @@
+# Ignore build artifacts
+target/
+project/target/
+project/project/
+
+# IDE and OS files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Logs and dependencies
+logs/
+lib_managed/
