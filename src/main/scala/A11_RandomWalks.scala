@@ -4,8 +4,9 @@ import org.apache.spark.rdd.RDD
 import scala.util.Random
 import java.io.{File, PrintWriter}
 import scala.collection.mutable
+import java.nio.file.Paths
 
-object RandomWalkThresholds {
+object A11_RandomWalks {
   def main(args: Array[String]): Unit = {
     // Initialize Spark Session
     val spark = SparkSession.builder()
@@ -16,11 +17,8 @@ object RandomWalkThresholds {
 
     val sc = spark.sparkContext
 
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
-    val outputFolder = "random_walk_clusters_thresholds"
-
-    // Ensure output folder exists
-    new File(outputFolder).mkdirs()
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
+    val outputTxtPath = "A11_simple_random_walk_clusters.txt"
 
     // Step 1: Load CSV
     val df = spark.read
@@ -34,9 +32,7 @@ object RandomWalkThresholds {
       (activity.hashCode.toLong, activity)
     }).distinct()
 
-    val activityIdToName = activitiesRDD.collectAsMap()
-
-    // Step 3: Compute Transition Probabilities
+    // Step 3: Compute Transition Counts
     val indexedRDD = df.rdd.zipWithIndex()
     val reversedIndexRDD = indexedRDD.map { case (row, index) => (index, row) }
 
@@ -61,20 +57,19 @@ object RandomWalkThresholds {
         ((from, to), count.toDouble / totalCount.toDouble)
       }
 
-    // Step 4: Convert Activity Names to Long IDs for GraphX
     val edges: RDD[Edge[Double]] = transitionProbabilities.map { case ((from, to), probability) =>
       Edge(from.hashCode.toLong, to.hashCode.toLong, probability)
     }
 
-    val graph = Graph(activitiesRDD.mapValues(_.hashCode.toLong), edges)
+    val graph = Graph(activitiesRDD, edges)
 
-    // Step 5: Perform Random Walks
-    val numWalks = 1000
-    val walkLength = 10
+    // Step 8: Perform Random Walks
+    val numWalks = 100
+    val walkLength = 2 // 10 before
     val random = new Random()
-    val coOccurrenceMap = mutable.Map[(Long, Long), Int]()
-
+    val coOccurrenceMap = mutable.Map[(String, String), Int]()
     val vertices = activitiesRDD.collect()
+    val vertexMap = vertices.toMap
     val neighborMap = graph.edges.map(e => (e.srcId, (e.dstId, e.attr))).groupByKey().collectAsMap()
 
     def selectNextVertex(neighbors: Iterable[(VertexId, Double)]): Option[VertexId] = {
@@ -85,18 +80,18 @@ object RandomWalkThresholds {
       Some(sortedNeighbors(cumulativeProbs.indexWhere(randVal <= _))._1)
     }
 
-    vertices.foreach { case (vertexId, _) =>
+    vertices.foreach { case (vertexId, activity) =>
       for (_ <- 1 to numWalks) {
         var currentVertex = vertexId
-        var visitedVertices = mutable.Set(vertexId)
+        var visitedActivities = mutable.Set(activity)
 
         for (_ <- 1 to walkLength) {
           val neighbors = neighborMap.getOrElse(currentVertex, Iterable())
-
           selectNextVertex(neighbors) match {
-            case Some(v) =>
-              visitedVertices += v
-              for (a <- visitedVertices; b <- visitedVertices if a != b) {
+            case Some(v) if vertexMap.contains(v) =>
+              val nextActivity = vertexMap(v)
+              visitedActivities += nextActivity
+              for (a <- visitedActivities; b <- visitedActivities if a != b) {
                 val key = if (a < b) (a, b) else (b, a)
                 coOccurrenceMap(key) = coOccurrenceMap.getOrElse(key, 0) + 1
               }
@@ -108,64 +103,37 @@ object RandomWalkThresholds {
       }
     }
 
-    // Step 6: Expand Threshold Dynamically and Save Results
-    val maxWalks = numWalks.toDouble
-    val thresholdSteps = 0.5 to 1.0 by 0.05
-
-    var finalClusters = mutable.Map[Long, mutable.Set[Long]]()
-
-    for (threshold <- thresholdSteps) {
-      val minCoOccurrence = (maxWalks * threshold).toInt
-      val strongConnections = coOccurrenceMap.filter { case (_, count) => count >= minCoOccurrence }
-
-      val clusterEdges: RDD[Edge[Double]] = sc.parallelize(
-        strongConnections.map { case ((v1, v2), count) =>
-          Edge(v1, v2, count.toDouble)
-        }.toSeq
-      )
-
-      val clusterGraph = Graph(activitiesRDD.mapValues(_.hashCode.toLong), clusterEdges)
-
-      // Apply LPA for Clustering at Each Threshold
-      val maxIterations = 10
-      val lpaGraph = clusterGraph.pregel(Long.MaxValue, maxIterations)(
-        (id, attr, newAttr) => math.min(attr, newAttr),
-        triplet => Iterator((triplet.dstId, triplet.srcAttr)),
-        (a, b) => math.min(a, b)
-      )
-
-      // Collect Clusters
-      val clusters = lpaGraph.vertices
-        .map { case (id, clusterId) => (clusterId, id) }
-        .groupByKey()
-        .mapValues(_.toSet)
-        .collect()
-
-      // Save Clusters for Current Threshold
-      val jsonThresholdClusters = clusters.map { case (_, cluster) =>
-        val namedCluster = cluster.map(id => activityIdToName.getOrElse(id, "Unknown"))
-        s"""{"members": [${namedCluster.mkString("\"", "\", \"", "\"")}]}"""
-      }.mkString("[\n", ",\n", "\n]")
-
-      val thresholdFilename = f"$outputFolder/clusters_threshold_${(threshold * 100).toInt}.json"
-      val writer = new PrintWriter(new File(thresholdFilename))
-      writer.write(jsonThresholdClusters)
-      writer.close()
-
-      println(s"Saved clusters for threshold ${(threshold * 100).toInt}% to: $thresholdFilename")
-
-      // Merge into final stable clusters
-      clusters.foreach { case (clusterId, members) =>
-        val existingCluster = finalClusters.find(_._2.intersect(members).nonEmpty)
-
-        existingCluster match {
-          case Some((key, set)) => set ++= members
-          case None             => finalClusters(clusterId) = mutable.Set() ++ members
+    val finalClusters = mutable.Map[String, mutable.Set[String]]()
+    coOccurrenceMap.foreach { case ((activity1, activity2), count) =>
+      if (count >= numWalks / 2) {
+        val cluster1 = finalClusters.find(_._2.contains(activity1))
+        val cluster2 = finalClusters.find(_._2.contains(activity2))
+        (cluster1, cluster2) match {
+          case (Some((key1, set1)), Some((key2, set2))) =>
+            if (key1 != key2) {
+              set1 ++= set2
+              finalClusters -= key2
+            }
+          case (Some((_, set1)), None) => set1 += activity2
+          case (None, Some((_, set2))) => set2 += activity1
+          case (None, None) =>
+            finalClusters(activity1) = mutable.Set(activity1, activity2)
         }
       }
     }
 
-    // Stop Spark Session
+    // Save clusters to .txt file
+    if (finalClusters.nonEmpty) {
+      val writer = new PrintWriter(new File(outputTxtPath))
+      finalClusters.zipWithIndex.foreach { case ((_, cluster), index) =>
+        writer.println(s"$index:${cluster.mkString(",")}")
+      }
+      writer.close()
+      println(s"Random walk clusters saved to: $outputTxtPath")
+    } else {
+      println("No clusters were generated.")
+    }
+
     spark.stop()
   }
 }

@@ -1,0 +1,10 @@
+dress_up_outdoor:work,dress_up_outdoor
+go_kitchen_sink:go_kitchen_sink,go_bed,go_computer_chair,go_bathtub,go_shoe_shelf
+go_kitchen_shelf:go_book_shelf,go_bathroom_sink,go_kitchen_shelf,go_computer,go_entrace
+go_chair:go_fridge,go_dining_table,go_chair,go_wc,go_wardrobe
+go_windows:open_windows,go_windows,lower_blinds
+wc_do:get_clothes,wc_do,put_plate_to_sink,change_clothes,switch_computer_off
+rest_in_chair:get_glass,rest_in_chair,dress_down_outdoor,finish_walk,clean
+drink_water:wc_flush,raise_blinds,wash_hands,brush_teeth,drink_water
+eat_cold_meal:close_windows,switch_computer_on,interact_with_man,eat_cold_meal,have_bath
+get_food_from_fridge:get_food_from_fridge,get_bread,sleep_in_bed,use_the_computer

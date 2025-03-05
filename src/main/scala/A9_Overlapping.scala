@@ -5,10 +5,10 @@ import scala.util.Random
 import java.io.{File, PrintWriter}
 import scala.collection.mutable
 import java.nio.file.Paths
-import java.io.PrintWriter
 
+// Overlapping attempt
 
-object OverlappingClustering {
+object A9_Overlapping {
   def main(args: Array[String]): Unit = {
     // Initialize Spark Session
     val spark = SparkSession.builder()
@@ -20,7 +20,7 @@ object OverlappingClustering {
     val sc = spark.sparkContext
 
     val csvPath = Paths.get("data", "sorted_logfile.csv").toString
-    val aggregatedJsonPath = "final_aggregated_clusters.json"
+    val resultTxtPath = "A9_overlapping.txt"
 
     // Step 1: Load CSV
     val df = spark.read
@@ -104,25 +104,12 @@ object OverlappingClustering {
       }
     }
 
-    // Step 8: Save Overlapping Clusters
-    val jsonOverlapping = activityClusterMap.map { case (activity, clusterMap) =>
-      val sortedClusters = clusterMap.toSeq.sortBy(-_._2).map { case (cluster, count) =>
-        s"""{"cluster": "$cluster", "strength": $count}"""
-      }.mkString("[", ",", "]")
-
-      s"""{"activity": "$activity", "clusters": $sortedClusters}"""
-    }.mkString("[\n", ",\n", "\n]")
-
-    val writer1 = new PrintWriter(new File(overlappingJsonPath))
-    writer1.write(jsonOverlapping)
-    writer1.close()
-    println(s"Overlapping clusters saved to: $overlappingJsonPath")
-
-    // Step 9: Aggregate Final Clusters Using Strength Thresholds
-    val maxStrength = if (activityClusterMap.nonEmpty && activityClusterMap.values.flatMap(_.values).nonEmpty) 
-        activityClusterMap.values.flatMap(_.values).max 
+    // Step 8: Aggregate Final Clusters Using Strength Thresholds
+    val maxStrength = if (activityClusterMap.nonEmpty && activityClusterMap.values.flatMap(_.values).nonEmpty)
+      activityClusterMap.values.flatMap(_.values).max
     else 0
-val aggregatedResults = mutable.ListBuffer[String]()
+
+    val finalClusterMap = mutable.Map[String, mutable.Set[String]]()
 
     for (threshold <- 0 to maxStrength) {
       val filteredClusters = activityClusterMap.map { case (activity, clusters) =>
@@ -130,25 +117,20 @@ val aggregatedResults = mutable.ListBuffer[String]()
         (activity, strongClusters)
       }.filter(_._2.nonEmpty) // Remove empty entries
 
-      val finalClusters = mutable.Map[String, mutable.Set[String]]()
       filteredClusters.foreach { case (activity, clusters) =>
         clusters.foreach { cluster =>
-          finalClusters.getOrElseUpdate(cluster, mutable.Set()) += activity
+          finalClusterMap.getOrElseUpdate(cluster, mutable.Set()) += activity
         }
       }
-
-      val jsonClusters = finalClusters.map { case (cluster, members) =>
-        s"""{"cluster": "$cluster", "members": [${members.mkString("\"", "\", \"", "\"")}]}"""
-      }.mkString("[\n", ",\n", "\n]")
-
-      aggregatedResults.append(s"""{"threshold": $threshold, "clusters": $jsonClusters}""")
     }
 
-    // Step 10: Save Aggregated Clusters
-    val writer2 = new PrintWriter(new File(aggregatedJsonPath))
-    writer2.write("[\n" + aggregatedResults.mkString(",\n") + "\n]")
-    writer2.close()
-    println(s"Final aggregated clusters saved to: $aggregatedJsonPath")
+    // Step 9: Save Final Clusters to .txt File
+    val writer = new PrintWriter(new File(resultTxtPath))
+    finalClusterMap.foreach { case (cluster, activities) =>
+      writer.write(s"$cluster:${activities.mkString(",")}\n")
+    }
+    writer.close()
+    println(s"Final clusters saved to: $resultTxtPath")
 
     // Stop Spark Session
     spark.stop()

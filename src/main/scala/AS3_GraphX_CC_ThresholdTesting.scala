@@ -8,7 +8,7 @@ import org.json4s.jackson.Serialization.write
 import org.json4s.DefaultFormats
 import java.nio.file.Paths
 
-object A3_1_GraphX_CC_ThresholdTesting {
+object AS3_GraphX_CC_ThresholdTesting {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder()
       .appName("ActivityClusteringThresholdTest")

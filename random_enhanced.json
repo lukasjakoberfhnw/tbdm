@@ -1,0 +1,4 @@
+[
+{"members": ["get_clothes", "wc_do", "put_plate_to_sink", "change_clothes", "go_kitchen_sink", "switch_computer_off", "get_glass", "dress_up_outdoor", "rest_in_chair", "go_bed", "dress_down_outdoor", "finish_walk", "clean", "wc_flush", "go_computer_chair", "do_exercise", "go_bathtub", "pack_goods", "raise_blinds", "go_shoe_shelf", "work", "lower_blinds", "wash_hands", "brush_teeth", "go_book_shelf", "drink_water", "get_food", "close_windows", "go_bathroom_sink", "go_kitchen_shelf", "switch_computer_on", "interact_with_man", "go_computer", "eat_cold_meal", "go_entrace", "go_outside", "have_bath", "go_windows", "go_fridge", "get_food_from_fridge", "go_dining_table", "get_water", "get_bread", "go_chair", "open_windows", "go_wc", "sleep_in_bed", "go_wardrobe", "go_to start", "go_exercise_place", "use_the_computer", "wash_dishes"]},
+{"members": ["go_workplace"]}
+]

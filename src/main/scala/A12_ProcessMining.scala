@@ -5,16 +5,9 @@ import org.apache.spark.graphx._
 import org.apache.spark.rdd.RDD
 import org.apache.spark.graphx.lib.LabelPropagation
 import java.io.PrintWriter
+import java.nio.file.Paths
 
-// APPROACH 2 - results 10 Clusters - DFG used
-// Loads and preprocesses event log data.
-// Builds a Directly-Follows Graph (DFG) from activity sequences.
-// Converts the DFG into a GraphX model (vertices & edges).
-// Runs Label Propagation Algorithm (LPA) for clustering.
-// Refines clusters by splitting large ones into smaller groups.
-// Prints the final set of activity clusters and saves them to a file.
-
-object Sol4 {
+object A12_ProcessMining {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder()
       .appName("Optimized Process Mining (GraphX Only)")
@@ -23,11 +16,13 @@ object Sol4 {
       .getOrCreate()
 
     spark.sparkContext.setLogLevel("WARN")
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
+    val outputTxtPath = "A12_process_mining.txt"
 
     // 1. Load and preprocess data
     val df = spark.read
       .option("header", "true")
-      .csv("/home/lukas/temp/sorted_logfile.csv") // Replace with your file path
+      .csv(csvPath) // Replace with your file path
       .withColumn("timestamp", to_timestamp(col("time:timestamp")))
       .withColumn("synthetic_case_id",
         date_format(col("timestamp"), "yyyyMMdd")
@@ -89,24 +84,16 @@ object Sol4 {
       (mostFrequentActivity, activities)
     }
 
-    // 8. Print and Save Renamed Clusters to a File
-    val outputFilePath = "out_sol4_clusters.txt" // Change this path if needed
+    // 8. Save Results in Required Format
+    val outputFilePath = outputTxtPath // Change path if needed
     val writer = new PrintWriter(outputFilePath)
 
-    println("=== Renamed Clusters (Based on Most Frequent Activity) ===")
-    writer.println("=== Renamed Clusters (Based on Most Frequent Activity) ===")
-
     renamedClusters.collect().foreach { case (mostFrequentActivity, activities) =>
-      println(s"""Cluster "$mostFrequentActivity" """)
-      writer.println(s"""Cluster "$mostFrequentActivity" """)
-
-      activities.foreach { activity =>
-        println(s"  - $activity")
-        writer.println(s"  - $activity")
-      }
+      val activitiesList = activities.mkString(",")
+      writer.println(s"$mostFrequentActivity:$activitiesList")
     }
 
-    writer.close() // Close the file writer
+    writer.close()
     println(s"Clusters saved to: $outputFilePath")
 
     spark.stop()

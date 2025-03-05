@@ -4,8 +4,9 @@ import org.apache.spark.rdd.RDD
 import scala.util.Random
 import java.io.{File, PrintWriter}
 import scala.collection.mutable
+import java.nio.file.Paths
 
-object Lukas_Custom6 {
+object A10_Aggregated {
   def main(args: Array[String]): Unit = {
     // Initialize Spark Session
     val spark = SparkSession.builder()
@@ -16,8 +17,8 @@ object Lukas_Custom6 {
 
     val sc = spark.sparkContext
 
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
-    val outputJsonPath = "custom6.json"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
+    val outputTxtPath = "A10_aggregated.txt"
 
     // Step 1: Load CSV
     val df = spark.read
@@ -66,25 +67,21 @@ object Lukas_Custom6 {
     val probabilityThresholds = 0.05 to 1.0 by 0.05
 
     for (threshold <- probabilityThresholds) {
-      // Step 7a: Filter edges based on threshold
       val edges: RDD[Edge[Double]] = transitionProbabilities
         .filter { case ((from, to), probability) => probability >= threshold }
         .map { case ((from, to), probability) =>
           Edge(from.hashCode.toLong, to.hashCode.toLong, probability)
         }
 
-      // Step 7b: Build the Graph (LPA needs Long IDs)
       val graph = Graph(activitiesRDD.mapValues(_.hashCode.toLong), edges)
 
-      // Step 7c: Run LPA (Only using Long IDs)
       val maxIterations = 10
       val lpaGraph = graph.pregel(Long.MaxValue, maxIterations)(
-        (id, attr, newAttr) => math.min(attr, newAttr), // Ensure only Long values are used
-        triplet => Iterator((triplet.dstId, triplet.srcAttr)), // Send messages as Long values
-        (a, b) => math.min(a, b) // Merge messages as Long values
+        (id, attr, newAttr) => math.min(attr, newAttr),
+        triplet => Iterator((triplet.dstId, triplet.srcAttr)),
+        (a, b) => math.min(a, b)
       )
 
-      // Step 7d: Restore Activity Names After LPA
       val communityAssignments = lpaGraph.vertices
         .join(activitiesRDD)
         .map { case (id, (community, activityName)) => (community, activityName) }
@@ -92,7 +89,6 @@ object Lukas_Custom6 {
         .mapValues(_.toSet)
         .collect()
 
-      // Step 7e: Merge clusters across thresholds
       communityAssignments.foreach { case (_, activities) =>
         val existingCluster = activityClusters.find { case (_, members) =>
           members.exists(activities.contains)
@@ -105,17 +101,14 @@ object Lukas_Custom6 {
       }
     }
 
-    // Step 8: Convert to JSON Format
-    val jsonClusters = activityClusters.values.map { cluster =>
-      s"""{"members": [${cluster.mkString("\"", "\", \"", "\"")}]}"""
-    }.mkString("[\n", ",\n", "\n]")
-
-    // Step 9: Write JSON to File
-    val writer = new PrintWriter(new File(outputJsonPath))
-    writer.write(jsonClusters)
+    // Step 8: Save results in .txt format
+    val writer = new PrintWriter(new File(outputTxtPath))
+    activityClusters.zipWithIndex.foreach { case ((_, clusterActivities), clusterId) =>
+      writer.println(s"$clusterId:${clusterActivities.mkString(",")}")
+    }
     writer.close()
 
-    println(s"Final merged cluster results saved to: $outputJsonPath")
+    println(s"Final merged cluster results saved to: $outputTxtPath")
 
     // Stop Spark Session
     spark.stop()

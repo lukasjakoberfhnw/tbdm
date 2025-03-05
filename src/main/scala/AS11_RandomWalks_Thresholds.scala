@@ -4,8 +4,10 @@ import org.apache.spark.rdd.RDD
 import scala.util.Random
 import java.io.{File, PrintWriter}
 import scala.collection.mutable
+import java.nio.file.Paths
 
-object RandomWalkClusteringEnhanced {
+
+object RandomWalkThresholds {
   def main(args: Array[String]): Unit = {
     // Initialize Spark Session
     val spark = SparkSession.builder()
@@ -16,8 +18,11 @@ object RandomWalkClusteringEnhanced {
 
     val sc = spark.sparkContext
 
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
-    val outputJsonPath = "random_enhanced.json"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
+    val outputFolder = "random_walk_clusters_thresholds"
+
+    // Ensure output folder exists
+    new File(outputFolder).mkdirs()
 
     // Step 1: Load CSV
     val df = spark.read
@@ -28,10 +33,10 @@ object RandomWalkClusteringEnhanced {
     // Step 2: Extract Distinct Activities (Vertices)
     val activitiesRDD: RDD[(VertexId, String)] = df.rdd.map(row => {
       val activity = row.getAs[String]("Activity")
-      (activity.hashCode.toLong, activity) // Convert activity names to unique Long IDs
+      (activity.hashCode.toLong, activity)
     }).distinct()
 
-    val activityIdToName = activitiesRDD.collectAsMap() // For restoring names later
+    val activityIdToName = activitiesRDD.collectAsMap()
 
     // Step 3: Compute Transition Probabilities
     val indexedRDD = df.rdd.zipWithIndex()
@@ -58,7 +63,7 @@ object RandomWalkClusteringEnhanced {
         ((from, to), count.toDouble / totalCount.toDouble)
       }
 
-    // Step 4: Convert Activity Names to Hash-Based Long IDs for GraphX
+    // Step 4: Convert Activity Names to Long IDs for GraphX
     val edges: RDD[Edge[Double]] = transitionProbabilities.map { case ((from, to), probability) =>
       Edge(from.hashCode.toLong, to.hashCode.toLong, probability)
     }
@@ -72,7 +77,6 @@ object RandomWalkClusteringEnhanced {
     val coOccurrenceMap = mutable.Map[(Long, Long), Int]()
 
     val vertices = activitiesRDD.collect()
-    val vertexMap = vertices.toMap
     val neighborMap = graph.edges.map(e => (e.srcId, (e.dstId, e.attr))).groupByKey().collectAsMap()
 
     def selectNextVertex(neighbors: Iterable[(VertexId, Double)]): Option[VertexId] = {
@@ -106,43 +110,62 @@ object RandomWalkClusteringEnhanced {
       }
     }
 
-    // Step 6: Filter Strongest Relationships Before Clustering
-    val minCoOccurrence = (numWalks * 0.85).toInt
-    val strongConnections = coOccurrenceMap.filter { case (_, count) => count >= minCoOccurrence }
+    // Step 6: Expand Threshold Dynamically and Save Results
+    val maxWalks = numWalks.toDouble
+    val thresholdSteps = 0.1 to 1.0 by 0.05
 
-    val clusterEdges: RDD[Edge[Double]] = sc.parallelize(
-      strongConnections.map { case ((v1, v2), count) =>
-        Edge(v1, v2, count.toDouble)
-      }.toSeq
-    )
+    var finalClusters = mutable.Map[Long, mutable.Set[Long]]()
 
-    val clusterGraph = Graph(activitiesRDD.mapValues(_.hashCode.toLong), clusterEdges)
+    for (threshold <- thresholdSteps) {
+      val minCoOccurrence = (maxWalks * threshold).toInt
+      val strongConnections = coOccurrenceMap.filter { case (_, count) => count >= minCoOccurrence }
 
-    // Step 7: Apply Label Propagation Algorithm (LPA) for Clustering
-    val maxIterations = 10
-    val lpaGraph = clusterGraph.pregel(Long.MaxValue, maxIterations)(
-      (id, attr, newAttr) => math.min(attr, newAttr), // FIX: Now using only Long values
-      triplet => Iterator((triplet.dstId, triplet.srcAttr)), // FIX: No String values passed
-      (a, b) => math.min(a, b) // FIX: Using Long for clustering
-    )
+      val clusterEdges: RDD[Edge[Double]] = sc.parallelize(
+        strongConnections.map { case ((v1, v2), count) =>
+          Edge(v1, v2, count.toDouble)
+        }.toSeq
+      )
 
-    // Step 8: Convert LPA Results to Clusters
-    val clusters = lpaGraph.vertices
-      .map { case (id, clusterId) => (clusterId, activityIdToName(id)) } // Restore names
-      .groupByKey()
-      .mapValues(_.toSet)
-      .collect()
+      val clusterGraph = Graph(activitiesRDD.mapValues(_.hashCode.toLong), clusterEdges)
 
-    // Step 9: Save Clusters to JSON
-    val jsonClusters = clusters.map { case (_, cluster) =>
-      s"""{"members": [${cluster.mkString("\"", "\", \"", "\"")}]}"""
-    }.mkString("[\n", ",\n", "\n]")
+      // Apply LPA for Clustering at Each Threshold
+      val maxIterations = 10
+      val lpaGraph = clusterGraph.pregel(Long.MaxValue, maxIterations)(
+        (id, attr, newAttr) => math.min(attr, newAttr),
+        triplet => Iterator((triplet.dstId, triplet.srcAttr)),
+        (a, b) => math.min(a, b)
+      )
 
-    val writer = new PrintWriter(new File(outputJsonPath))
-    writer.write(jsonClusters)
-    writer.close()
+      // Collect Clusters
+      val clusters = lpaGraph.vertices
+        .map { case (id, clusterId) => (clusterId, id) }
+        .groupByKey()
+        .mapValues(_.toSet)
+        .collect()
 
-    println(s"Random walk clusters saved to: $outputJsonPath")
+      // Save Clusters for Current Threshold
+      val jsonThresholdClusters = clusters.map { case (_, cluster) =>
+        val namedCluster = cluster.map(id => activityIdToName.getOrElse(id, "Unknown"))
+        s"""{"members": [${namedCluster.mkString("\"", "\", \"", "\"")}]}"""
+      }.mkString("[\n", ",\n", "\n]")
+
+      val thresholdFilename = f"$outputFolder/clusters_threshold_${(threshold * 100).toInt}.json"
+      val writer = new PrintWriter(new File(thresholdFilename))
+      writer.write(jsonThresholdClusters)
+      writer.close()
+
+      println(s"Saved clusters for threshold ${(threshold * 100).toInt}% to: $thresholdFilename")
+
+      // Merge into final stable clusters
+      clusters.foreach { case (clusterId, members) =>
+        val existingCluster = finalClusters.find(_._2.intersect(members).nonEmpty)
+
+        existingCluster match {
+          case Some((key, set)) => set ++= members
+          case None             => finalClusters(clusterId) = mutable.Set() ++ members
+        }
+      }
+    }
 
     // Stop Spark Session
     spark.stop()

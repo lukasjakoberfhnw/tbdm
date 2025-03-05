@@ -1,0 +1,11 @@
+7:go_exercise_place
+5:do_exercise
+4:brush_teeth,go_computer_chair,go_bed,finish_walk,get_water,go_kitchen_sink,go_bathroom_sink,wash_dishes,drink_water,change_clothes,go_kitchen_shelf,switch_computer_on,go_entrace,go_fridge,wc_flush,go_wardrobe,put_plate_to_sink,dress_up_outdoor,interact_with_man,switch_computer_off,go_workplace,rest_in_chair,have_bath,go_bathtub,go_chair,dress_down_outdoor,get_food_from_fridge,get_clothes,get_bread,work,wash_hands,sleep_in_bed,do_exercise,get_glass,go_computer,go_shoe_shelf,use_the_computer,go_wc,go_dining_table,eat_cold_meal,wc_do
+6:pack_goods
+2:clean,go_book_shelf
+9:go_windows
+3:go_to start
+1:raise_blinds,open_windows
+0:go_outside,get_food
+8:wash_dishes
+10:close_windows,lower_blinds
