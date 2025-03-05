@@ -1,0 +1,13 @@
+6:get_glass,go_kitchen_shelf
+7:get_food_from_fridge,go_fridge
+0:have_bath,go_bathroom_sink
+10:wc_flush,go_wc,wc_do
+2:go_computer_chair,switch_computer_on,go_computer,use_the_computer
+9:dress_down_outdoor,change_clothes,work,go_wardrobe,go_shoe_shelf,dress_up_outdoor,go_workplace
+8:drink_water,eat_cold_meal,get_water,go_kitchen_sink
+4:raise_blinds,open_windows
+11:go_chair,rest_in_chair
+5:go_entrace,interact_with_man
+1:go_outside,get_food
+3:sleep_in_bed,go_bed
+12:close_windows,lower_blinds

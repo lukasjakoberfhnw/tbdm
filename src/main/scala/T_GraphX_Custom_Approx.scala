@@ -3,6 +3,11 @@ import org.apache.spark.graphx._
 import org.apache.spark.rdd.RDD
 import scala.util.Random
 import java.io.{File, PrintWriter}
+import java.nio.file.Paths
+
+// Custom approximation of LPA
+// Outputs -- communities.json
+// Not good
 
 object GraphX_Custom_Approx {
   def main(args: Array[String]): Unit = {
@@ -15,7 +20,7 @@ object GraphX_Custom_Approx {
 
     val sc = spark.sparkContext
 
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
     val outputJsonPath = "communities.json"
 
     // Step 1: Load CSV

@@ -5,9 +5,8 @@ import org.apache.spark.sql.Row
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
 import java.io.PrintWriter
 import scala.collection.mutable
-import org.json4s.jackson.Serialization
-import org.json4s.jackson.Serialization.write
-import org.json4s.DefaultFormats
+import java.nio.file.Paths
+
 
 object A1_ActivityClustering {
   def main(args: Array[String]): Unit = {
@@ -18,7 +17,7 @@ object A1_ActivityClustering {
       .config("spark.driver.bindAddress", "127.0.0.1")
       .getOrCreate()
 
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
 
     // Step 1: Load CSV and inspect schema
     val df = spark.read

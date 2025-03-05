@@ -1,0 +1,15 @@
+1176821039104:go_computer_chair,wc_flush,finish_walk,switch_computer_off,put_plate_to_sink,go_kitchen_shelf,go_dining_table,sleep_in_bed,go_entrace,pack_goods,go_bathroom_sink,use_the_computer,drink_water,go_to start,clean,go_wc,close_windows,get_clothes,change_clothes,go_book_shelf,wc_do,get_glass,rest_in_chair,go_computer,do_exercise,open_windows,go_bed,go_wardrobe,go_windows,lower_blinds,get_water,interact_with_man,go_kitchen_sink,get_bread,go_chair,eat_cold_meal,wash_hands,wash_dishes,go_exercise_place
+17179869185:raise_blinds
+1022202216448:go_outside
+1030792151040:dress_down_outdoor
+1030792151041:go_bathtub
+1090921693184:work
+249108103168:get_food_from_fridge
+309237645312:dress_up_outdoor
+369367187456:brush_teeth
+1279900254208:have_bath
+1331439861761:go_workplace
+1357209665536:switch_computer_on
+1408749273088:get_food
+712964571136:go_fridge
+1649267441664:go_shoe_shelf

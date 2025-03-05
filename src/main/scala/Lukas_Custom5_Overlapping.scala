@@ -4,6 +4,9 @@ import org.apache.spark.rdd.RDD
 import scala.util.Random
 import java.io.{File, PrintWriter}
 import scala.collection.mutable
+import java.nio.file.Paths
+import java.io.PrintWriter
+
 
 object OverlappingClustering {
   def main(args: Array[String]): Unit = {
@@ -16,9 +19,8 @@ object OverlappingClustering {
 
     val sc = spark.sparkContext
 
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
-    val overlappingJsonPath = "/home/lukas/temp/overlapping_clusters.json"
-    val aggregatedJsonPath = "/home/lukas/temp/final_aggregated_clusters.json"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
+    val aggregatedJsonPath = "final_aggregated_clusters.json"
 
     // Step 1: Load CSV
     val df = spark.read

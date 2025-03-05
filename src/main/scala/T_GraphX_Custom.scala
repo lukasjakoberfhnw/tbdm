@@ -3,8 +3,11 @@ import org.apache.spark.graphx._
 import org.apache.spark.rdd.RDD
 import java.io.PrintWriter
 import scala.util.Random
+import java.nio.file.Paths
 
-object GraphX_Infomap {
+// Not really necessary...
+
+object GraphX_Custom_Base {
   def main(args: Array[String]): Unit = {
     // Initialize Spark Session
     val spark = SparkSession.builder()
@@ -15,7 +18,7 @@ object GraphX_Infomap {
 
     val sc = spark.sparkContext
 
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
 
     // Step 1: Load CSV
     val df = spark.read

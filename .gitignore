@@ -12,3 +12,5 @@ project/project/
 # Logs and dependencies
 logs/
 lib_managed/
+
+data/sorted_logfile.csv

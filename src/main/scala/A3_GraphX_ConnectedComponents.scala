@@ -1,9 +1,10 @@
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.graphx._
 import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.Row
+import java.io.PrintWriter
+import java.nio.file.Paths
 
-object GraphX_CC {
+object A3_GraphX_ConnectedComponents {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder()
       .appName("ActivityClustering")
@@ -11,7 +12,8 @@ object GraphX_CC {
       .config("spark.driver.bindAddress", "127.0.0.1")
       .getOrCreate()
 
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
+    val outputPath = "A3_graphx_connectedcomponents.txt" 
 
     val df = spark.read
       .option("header", "true")
@@ -53,15 +55,20 @@ object GraphX_CC {
     // Step 5: Join components with activity names
     val clusters = connectedComponents.join(vertices).map {
       case (_, (clusterId, activity)) => (clusterId, activity)
+    }.groupByKey()
+      .map { case (clusterId, activities) =>
+        s"$clusterId:${activities.mkString(", ")}"
+      }.collect()
+
+    // Save clusters to a text file
+    val writer = new PrintWriter(outputPath)
+    try {
+      clusters.foreach(writer.println)
+    } finally {
+      writer.close()
     }
 
-    println("=== Activity Clusters ===")
-    clusters.collect().groupBy(_._1).foreach { case (clusterId, activities) =>
-      println(s"Cluster ID: $clusterId")
-      activities.foreach { case (_, activity) =>
-        println(s"  - $activity")
-      }
-    }
+    println(s"Clusters saved to $outputPath")
 
     spark.stop()
   }

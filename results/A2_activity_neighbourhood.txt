@@ -1,0 +1,15 @@
+10:pack_goods
+11:brush_teeth,go_bed,sleep_in_bed
+4:put_plate_to_sink,interact_with_man,eat_cold_meal,go_entrace,go_dining_table
+13:rest_in_chair,do_exercise,lower_blinds,close_windows,go_chair,go_exercise_place
+3:go_to start
+8:raise_blinds,open_windows
+0:get_food
+1:switch_computer_off,go_computer_chair,switch_computer_on,go_computer,use_the_computer
+5:get_clothes,change_clothes,finish_walk,go_bathtub,have_bath,go_wardrobe
+14:wash_dishes
+7:go_kitchen_sink,get_glass,drink_water,go_kitchen_shelf,get_water,get_bread
+2:go_fridge,get_food_from_fridge
+9:wc_do,wc_flush,wash_hands,go_bathroom_sink,go_windows,go_wc
+6:clean,go_book_shelf
+12:dress_up_outdoor,dress_down_outdoor,go_workplace,go_shoe_shelf,work,go_outside

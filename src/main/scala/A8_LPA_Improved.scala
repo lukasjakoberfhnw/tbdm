@@ -3,20 +3,24 @@ import org.apache.spark.graphx._
 import org.apache.spark.rdd.RDD
 import scala.util.Random
 import java.io.{File, PrintWriter}
+import scala.collection.mutable
+import java.nio.file.Paths
+import java.io.PrintWriter
 
-object Lukas_Custom4 {
+object A8_LPA_Improved {
   def main(args: Array[String]): Unit = {
     // Initialize Spark Session
     val spark = SparkSession.builder()
-      .appName("ActivityGraphLPA")
+      .appName("ActivityGraphFinalClustering")
       .master("local[*]")
       .config("spark.driver.bindAddress", "127.0.0.1")
       .getOrCreate()
 
     val sc = spark.sparkContext
 
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
-    val outputJsonPath = "/home/lukas/temp/clusters.json"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
+    val outputJsonPath = "A8_lpa_improved.json"
+    val outputTxtPath = "A8_lpa_improved.txt"
 
     // Step 1: Load CSV
     val df = spark.read
@@ -25,9 +29,9 @@ object Lukas_Custom4 {
       .csv(csvPath)
 
     // Step 2: Extract Distinct Activities (Vertices)
-    val activitiesRDD: RDD[(VertexId, (String, Long))] = df.rdd.map(row => {
+    val activitiesRDD: RDD[(VertexId, String)] = df.rdd.map(row => {
       val activity = row.getAs[String]("Activity")
-      (activity.hashCode.toLong, (activity, activity.hashCode.toLong)) // Store ID as Long
+      (activity.hashCode.toLong, activity) // Store ID as Long
     }).distinct()
 
     // Step 3: Compute Transition Counts
@@ -58,22 +62,21 @@ object Lukas_Custom4 {
         ((from, to), count.toDouble / totalCount.toDouble)
       }
 
-    // Step 6: Loop over probability thresholds and store results
-    val results = scala.collection.mutable.ListBuffer[String]()
+    // Step 6: Dictionary to Store Co-Occurrences
+    val coOccurrenceMap = mutable.Map[(String, String), Int]()
+
+    // Step 7: Loop Over Thresholds
     val probabilityThresholds = 0.05 to 1.0 by 0.05
 
     for (threshold <- probabilityThresholds) {
-      // Step 6a: Filter edges based on threshold
       val edges: RDD[Edge[Double]] = transitionProbabilities
         .filter { case ((from, to), probability) => probability >= threshold }
         .map { case ((from, to), probability) =>
           Edge(from.hashCode.toLong, to.hashCode.toLong, probability)
         }
 
-      // Step 6b: Build the Graph
-      val graph = Graph(activitiesRDD.mapValues(_._2), edges)
+      val graph = Graph(activitiesRDD.mapValues(_.hashCode.toLong), edges)
 
-      // Step 6c: Run LPA
       val maxIterations = 10
       val lpaGraph = graph.pregel(Long.MaxValue, maxIterations)(
         (id, attr, newAttr) => math.min(attr, newAttr),
@@ -81,27 +84,63 @@ object Lukas_Custom4 {
         (a, b) => math.min(a, b)
       )
 
-      // Step 6d: Restore Activity Names
       val communityAssignments = lpaGraph.vertices
         .join(activitiesRDD)
-        .map { case (id, (community, (activityName, _))) => (community, activityName) }
+        .map { case (id, (community, activityName)) => (community, activityName) }
         .groupByKey()
         .mapValues(_.toList)
+        .collect()
 
-      // Step 6e: Convert to JSON Format
-      val jsonClusters = communityAssignments.collect().map { case (community, activities) =>
-        s"""{"community": "$community", "members": [${activities.mkString("\"", "\", \"", "\"")}]}"""
-      }.mkString("[\n", ",\n", "\n]")
-
-      results.append(s"""{"threshold": $threshold, "clusters": $jsonClusters}""")
+      communityAssignments.foreach { case (_, activities) =>
+        for (a <- activities; b <- activities if a != b) {
+          val key = if (a < b) (a, b) else (b, a)
+          coOccurrenceMap(key) = coOccurrenceMap.getOrElse(key, 0) + 1
+        }
+      }
     }
 
-    // Step 7: Write JSON to File
+    // Step 8: Convert Co-Occurrence Map to Final Clusters
+    val finalClusters = mutable.Map[String, mutable.Set[String]]()
+
+    coOccurrenceMap.foreach { case ((activity1, activity2), count) =>
+      if (count > (probabilityThresholds.size / 2)) {
+        val cluster1 = finalClusters.find(_._2.contains(activity1))
+        val cluster2 = finalClusters.find(_._2.contains(activity2))
+
+        (cluster1, cluster2) match {
+          case (Some((key1, set1)), Some((key2, set2))) =>
+            if (key1 != key2) {
+              set1 ++= set2
+              finalClusters -= key2
+            }
+          case (Some((_, set1)), None) => set1 += activity2
+          case (None, Some((_, set2))) => set2 += activity1
+          case (None, None) =>
+            finalClusters(activity1) = mutable.Set(activity1, activity2)
+        }
+      }
+    }
+
+    // Step 9: Convert to JSON Format
+    val jsonClusters = finalClusters.values.map { cluster =>
+      s"""{"members": [${cluster.mkString("\"", "\", \"", "\"")}]}"""
+    }.mkString("[\n", ",\n", "\n]")
+
+    // Step 10: Write JSON to File
     val writer = new PrintWriter(new File(outputJsonPath))
-    writer.write("[\n" + results.mkString(",\n") + "\n]")
+    writer.write(jsonClusters)
     writer.close()
 
-    println(s"Cluster results saved to: $outputJsonPath")
+    println(s"Final cluster results saved to: $outputJsonPath")
+
+    // Step 11: Write TXT file with required format
+    val txtWriter = new PrintWriter(new File(outputTxtPath))
+    finalClusters.zipWithIndex.foreach { case ((clusterId, activities), index) =>
+      txtWriter.println(s"$index:${activities.mkString(",")}")
+    }
+    txtWriter.close()
+
+    println(s"Final cluster results saved to: $outputTxtPath")
 
     // Stop Spark Session
     spark.stop()

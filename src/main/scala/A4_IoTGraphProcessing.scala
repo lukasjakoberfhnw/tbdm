@@ -3,6 +3,8 @@ import org.apache.spark.graphx._
 import org.apache.spark.graphx.lib.LabelPropagation
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.expressions.Window
+import java.nio.file.Paths
+import java.io.PrintWriter
 
 // TEST: with window of 10 min + parameters for edges !! NO DFG USED!!! Time-Based Graph (Creates connections based on time proximity rather than strict sequence.)
 // Loads and preprocesses IoT event log data.
@@ -23,7 +25,7 @@ object IoTGraphProcessing {
       .getOrCreate()
 
     spark.sparkContext.setLogLevel("ERROR")
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
 
     // Step 1: Load CSV and adjust timestamps
     val df = spark.read
@@ -114,23 +116,19 @@ object IoTGraphProcessing {
         (mostFrequentActivity, activities.toSet) // Return new cluster name
       })
 
-    import java.io.PrintWriter
 
     // Step 9: Print and Save Renamed Clusters to a File
-    val outputFilePath = "out.txt" // Change this path if needed
+    val outputFilePath = "A4_iot_graph_processing.txt" // Change this path if needed
     val writer = new PrintWriter(outputFilePath)
 
     println("=== Renamed Clusters (Based on Most Frequent Activity) ===")
-    writer.println("=== Renamed Clusters (Based on Most Frequent Activity) ===")
 
-    clustersWithActivities.collect().foreach { case (_, (mostFrequentActivity, activities)) =>
-      println(s"""Cluster "$mostFrequentActivity" """)
-      writer.println(s"""Cluster "$mostFrequentActivity" """)
+    clustersWithActivities.collect().foreach { case (clusterId, (mostFrequentActivity, activities)) =>
+      val activityList = activities.mkString(",") // Convert activities to comma-separated values
+      val clusterLine = s"$clusterId:$activityList" // Format as required
 
-      activities.foreach { activity =>
-        println(s"  - $activity")
-        writer.println(s"  - $activity")
-      }
+      println(clusterLine)  // Print to console
+      writer.println(clusterLine) // Write to file
     }
 
     writer.close() // Close the file writer

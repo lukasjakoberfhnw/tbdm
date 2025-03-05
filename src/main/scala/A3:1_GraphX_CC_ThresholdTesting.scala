@@ -6,8 +6,9 @@ import java.io.PrintWriter
 import org.json4s.jackson.Serialization
 import org.json4s.jackson.Serialization.write
 import org.json4s.DefaultFormats
+import java.nio.file.Paths
 
-object ThresholdTesting {
+object A3_1_GraphX_CC_ThresholdTesting {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder()
       .appName("ActivityClusteringThresholdTest")
@@ -15,7 +16,7 @@ object ThresholdTesting {
       .config("spark.driver.bindAddress", "127.0.0.1")
       .getOrCreate()
 
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
 
     val df = spark.read
       .option("header", "true")
@@ -64,7 +65,7 @@ object ThresholdTesting {
     implicit val formats: DefaultFormats.type = DefaultFormats
     val jsonString = write(results)
 
-    val writer = new PrintWriter("clusters_result.json")
+    val writer = new PrintWriter("threshold_results.json")
     writer.write(jsonString)
     writer.close()
 

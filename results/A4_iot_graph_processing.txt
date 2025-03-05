@@ -1,0 +1,5 @@
+-689898698:close_windows,lower_blinds
+407046132:go_to start
+-1420372295:change_clothes,dress_up_outdoor,dress_down_outdoor,go_workplace,go_bathtub,go_shoe_shelf,work,get_food,go_outside,go_wardrobe
+-1950052284:get_clothes,wc_do,switch_computer_off,go_bed,wc_flush,go_computer_chair,raise_blinds,wash_hands,brush_teeth,go_bathroom_sink,switch_computer_on,interact_with_man,go_computer,eat_cold_meal,go_entrace,have_bath,go_windows,go_fridge,get_food_from_fridge,go_dining_table,get_bread,open_windows,go_wc,sleep_in_bed,use_the_computer
+1149853422:put_plate_to_sink,go_kitchen_sink,get_glass,rest_in_chair,finish_walk,clean,do_exercise,pack_goods,go_book_shelf,drink_water,go_kitchen_shelf,get_water,go_chair,go_exercise_place,wash_dishes

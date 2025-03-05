@@ -5,6 +5,7 @@ import org.apache.spark.graphx._
 import org.apache.spark.rdd.RDD
 import org.apache.spark.graphx.lib.LabelPropagation
 import java.io.PrintWriter
+import java.nio.file.Paths
 
 // APPROACH 1 - results - all single clusters
 // Loads and processes the event log dataset.
@@ -16,7 +17,7 @@ import java.io.PrintWriter
 // Prints the detected clusters of related activities.
 // Saves the final clusters to a file.
 
-object Sol3 {
+object A5_Standard_LPA_SCC {
   def main(args: Array[String]): Unit = {
     // Initialize Spark Session
     val spark = SparkSession.builder()
@@ -27,7 +28,7 @@ object Sol3 {
       .getOrCreate()
 
     spark.sparkContext.setLogLevel("ERROR")
-    val csvPath = "/home/lukas/temp/sorted_logfile.csv"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
 
     // Step 1: Load CSV and adjust timestamps
     val df = spark.read
@@ -74,9 +75,6 @@ object Sol3 {
     def printAndSaveClusters(title: String, clusterResults: RDD[(VertexId, VertexId)], outputFilePath: String): Unit = {
       val writer = new PrintWriter(outputFilePath)
 
-      println(s"\n=== Renamed Clusters ($title) ===")
-      writer.println(s"=== Renamed Clusters ($title) ===")
-
       val clustersWithNames = clusterResults.join(verticesRDD)
         .map { case (id, (clusterId, activity)) => (clusterId, activity) }
         .groupByKey()
@@ -85,14 +83,12 @@ object Sol3 {
           (mostFrequentActivity, activities)
         })
 
-      clustersWithNames.collect().foreach { case (_, (mostFrequentActivity, activities)) =>
-        println(s"""Cluster "$mostFrequentActivity" """)
-        writer.println(s"""Cluster "$mostFrequentActivity" """)
-
-        activities.foreach { activity =>
-          println(s"  - $activity")
-          writer.println(s"  - $activity")
-        }
+      clustersWithNames.collect().foreach { case (clusterId, (_, activities)) =>
+        val activityList = activities.mkString(",")  // Format activities as comma-separated values
+        val clusterLine = s"$clusterId:$activityList"  // Format as required
+        
+        println(clusterLine)  // Print to console
+        writer.println(clusterLine)  // Write to file
       }
 
       writer.close()
@@ -101,10 +97,10 @@ object Sol3 {
 
     // Step 7: Run Clustering Algorithms and Save Results
     val labelPropagation = LabelPropagation.run(graph, 5)
-    printAndSaveClusters("Label Propagation", labelPropagation.vertices, "out_sol3_lpa_clusters.txt")
+    printAndSaveClusters("Label Propagation", labelPropagation.vertices, "A5__lpa_clusters.txt")
 
     val stronglyConnected = graph.stronglyConnectedComponents(5)
-    printAndSaveClusters("Strongly Connected Components", stronglyConnected.vertices, "out_sol3_scc_clusters.txt")
+    printAndSaveClusters("Strongly Connected Components", stronglyConnected.vertices, "A5__scc_clusters.txt")
 
     spark.stop()
   }

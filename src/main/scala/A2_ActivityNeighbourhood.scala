@@ -1,8 +1,11 @@
 import org.apache.spark.sql.SparkSession
 import scala.collection.mutable
 import scala.util.control.Breaks._
+import java.nio.file.Paths
+import java.io.PrintWriter
 
-object ActivityNeighbourhood2 {
+
+object A2_ActivityNeighbourhood {
   def main(args: Array[String]): Unit = {
     // Initialize Spark Session
     val spark = SparkSession.builder()
@@ -11,7 +14,7 @@ object ActivityNeighbourhood2 {
       .config("spark.driver.bindAddress", "127.0.0.1")
       .getOrCreate()
 
-    val csvPath = "/tmp/data/sorted_logfile.csv"
+    val csvPath = Paths.get("data", "sorted_logfile.csv").toString
 
     // Step 1: Load CSV and inspect schema
     val df = spark.read
@@ -99,12 +102,24 @@ object ActivityNeighbourhood2 {
       }
     }
 
-    // Step 5: Print final clusters
-    println("=== Final Clusters (15 Remaining) ===")
-    clusters.zipWithIndex.foreach { case ((_, activities), index) =>
-      println(s"Cluster $index:")
-      activities.foreach(activity => println(s"  - $activity"))
-    }
+    val clustersString = clusters.zipWithIndex.map { case ((_, activities), index) =>
+      s"$index:${activities.mkString("," )}"
+    }.mkString("\n")
+    
+    // Print to console
+    println(clustersString)
+        
+    // Save to file
+    new PrintWriter("A2_activity_neighbourhood.txt") { write(clustersString); close() }
+    println("Final clusters saved to clusters.txt")
+
+
+    // // Step 5: Print final clusters
+    // println("=== Final Clusters (15 Remaining) ===")
+    // clusters.zipWithIndex.foreach { case ((_, activities), index) =>
+    //   println(s"Cluster $index:")
+    //   activities.foreach(activity => println(s"  - $activity"))
+    // }
 
     // Stop Spark Session
     spark.stop()

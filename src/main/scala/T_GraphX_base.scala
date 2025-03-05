@@ -56,7 +56,6 @@ object GraphX_base {
       println(s"Relationship: $relationship, Count: $count")
     }
 
-    
     spark.stop()
   }
 }
