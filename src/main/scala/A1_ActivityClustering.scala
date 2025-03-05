@@ -3,12 +3,13 @@ import org.apache.spark.graphx._
 import scala.util.control.Breaks._
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
-
 import java.io.PrintWriter
-
 import scala.collection.mutable
+import org.json4s.jackson.Serialization
+import org.json4s.jackson.Serialization.write
+import org.json4s.DefaultFormats
 
-object ActivityClustering {
+object A1_ActivityClustering {
   def main(args: Array[String]): Unit = {
     // Initialize Spark Session
     val spark = SparkSession.builder()
@@ -112,25 +113,39 @@ object ActivityClustering {
       }
     }
 
-    // Step 5: Print final clusters
-    println("=== Final Clusters (15 Remaining) ===")
-    clusters.zipWithIndex.foreach { case ((_, activities), index) =>
-      println(s"Cluster $index:")
-      activities.foreach(activity => println(s"  - $activity"))
-    }
+        // Convert to required string format
+    val clustersString = clusters.zipWithIndex.map { case ((_, activities), index) =>
+      s"$index:${activities.mkString("," )}"
+    }.mkString("\n")
+    
+    // Print to console
+    println(clustersString)
+        
+    // Save to file
+    new PrintWriter("clusters.txt") { write(clustersString); close() }
+    println("Final clusters saved to clusters.txt")
 
-    // Step 6: Store clusters as .txt file
 
-    println("=== Store Clusters in txt file ===")
-    val outputText = new StringBuilder // Use StringBuilder instead of String
 
-    clusters.zipWithIndex.foreach { case ((_, activities), index) =>
-      outputText.append(s"Cluster $index: ") // Append instead of using +=
-      outputText.append(activities.mkString(", ")) 
-      outputText.append("\n")
-    }
+    // // Step 5: Print final clusters
+    // println("=== Final Clusters (15 Remaining) ===")
+    // clusters.zipWithIndex.foreach { case ((_, activities), index) =>
+    //   println(s"Cluster $index:")
+    //   activities.foreach(activity => println(s"  - $activity"))
+    // }
 
-    new PrintWriter("out.txt") { write(outputText.toString()); close }
+    // // Step 6: Store clusters as .txt file
+
+    // println("=== Store Clusters in txt file ===")
+    // val outputText = new StringBuilder // Use StringBuilder instead of String
+
+    // clusters.zipWithIndex.foreach { case ((_, activities), index) =>
+    //   outputText.append(s"Cluster $index: ") // Append instead of using +=
+    //   outputText.append(activities.mkString(", ")) 
+    //   outputText.append("\n")
+    // }
+
+    // new PrintWriter("out.txt") { write(outputText.toString()); close }
 
     // temporary: store to csv
 
