@@ -1,0 +1,320 @@
+[
+    {
+        "score": 1.69009127791874304E17,
+        "activities": [
+            "do_exercise"
+        ]
+    },
+    {
+        "score": 9.1117112785363664E16,
+        "activities": [
+            "dress_down_outdoor"
+        ]
+    },
+    {
+        "score": 8.566826168832128E13,
+        "activities": [
+            "go_outside"
+        ]
+    },
+    {
+        "score": 6.5711755826246799E18,
+        "activities": [
+            "go_dining_table"
+        ]
+    },
+    {
+        "score": 4.039332541629245E19,
+        "activities": [
+            "get_bread"
+        ]
+    },
+    {
+        "score": 1.7184543071246944E17,
+        "activities": [
+            "raise_blinds"
+        ]
+    },
+    {
+        "score": 1.95031542147571E15,
+        "activities": [
+            "open_windows"
+        ]
+    },
+    {
+        "score": 7.4615149824163912E18,
+        "activities": [
+            "wc_flush"
+        ]
+    },
+    {
+        "score": 1.1683606379124489E11,
+        "activities": [
+            "get_food"
+        ]
+    },
+    {
+        "score": 1.1560393473151004E20,
+        "activities": [
+            "go_wc"
+        ]
+    },
+    {
+        "score": 7.553567993118634E18,
+        "activities": [
+            "switch_computer_off"
+        ]
+    },
+    {
+        "score": 3.4314995428354867E17,
+        "activities": [
+            "wash_dishes"
+        ]
+    },
+    {
+        "score": 5.3653004074054992E16,
+        "activities": [
+            "close_windows"
+        ]
+    },
+    {
+        "score": 1.10555613279225408E18,
+        "activities": [
+            "go_shoe_shelf"
+        ]
+    },
+    {
+        "score": 1.929017162854392E20,
+        "activities": [
+            "get_glass"
+        ]
+    },
+    {
+        "score": 9.162363309710097E19,
+        "activities": [
+            "go_kitchen_sink"
+        ]
+    },
+    {
+        "score": 1.12610049859749197E18,
+        "activities": [
+            "eat_cold_meal"
+        ]
+    },
+    {
+        "score": 1.3231958716944902E19,
+        "activities": [
+            "go_to start"
+        ]
+    },
+    {
+        "score": 7.5148745199157811E17,
+        "activities": [
+            "go_bathtub"
+        ]
+    },
+    {
+        "score": 5.87022443927562E15,
+        "activities": [
+            "go_workplace"
+        ]
+    },
+    {
+        "score": 1.05226601490937152E18,
+        "activities": [
+            "finish_walk"
+        ]
+    },
+    {
+        "score": 2.2289343119378304E17,
+        "activities": [
+            "get_food_from_fridge"
+        ]
+    },
+    {
+        "score": 4.917277895837298E19,
+        "activities": [
+            "go_bathroom_sink"
+        ]
+    },
+    {
+        "score": 2.4549546744590111E18,
+        "activities": [
+            "go_computer_chair"
+        ]
+    },
+    {
+        "score": 4.093718211019487E19,
+        "activities": [
+            "drink_water"
+        ]
+    },
+    {
+        "score": 7.6820137693121075E18,
+        "activities": [
+            "switch_computer_on"
+        ]
+    },
+    {
+        "score": 2.5067075934503384E21,
+        "activities": [
+            "rest_in_chair"
+        ]
+    },
+    {
+        "score": 5.985388618711888E19,
+        "activities": [
+            "get_water"
+        ]
+    },
+    {
+        "score": 2.03572542230548915E18,
+        "activities": [
+            "pack_goods"
+        ]
+    },
+    {
+        "score": 2.00981043736463334E18,
+        "activities": [
+            "go_fridge"
+        ]
+    },
+    {
+        "score": 2.56513345444339E14,
+        "activities": [
+            "lower_blinds"
+        ]
+    },
+    {
+        "score": 3.820633607475696E19,
+        "activities": [
+            "go_entrace"
+        ]
+    },
+    {
+        "score": 3.2811208080825631E18,
+        "activities": [
+            "interact_with_man"
+        ]
+    },
+    {
+        "score": 1.4412255041761266E19,
+        "activities": [
+            "go_exercise_place"
+        ]
+    },
+    {
+        "score": 1.2927866763459615E19,
+        "activities": [
+            "go_windows"
+        ]
+    },
+    {
+        "score": 3.403081008533522E16,
+        "activities": [
+            "have_bath"
+        ]
+    },
+    {
+        "score": 1.2382044853290619E19,
+        "activities": [
+            "put_plate_to_sink"
+        ]
+    },
+    {
+        "score": 5.5345409629754264E16,
+        "activities": [
+            "go_book_shelf"
+        ]
+    },
+    {
+        "score": 7.301071856463264E19,
+        "activities": [
+            "go_computer"
+        ]
+    },
+    {
+        "score": 2.9924098726798643E17,
+        "activities": [
+            "sleep_in_bed"
+        ]
+    },
+    {
+        "score": 1.633706248662401E19,
+        "activities": [
+            "change_clothes"
+        ]
+    },
+    {
+        "score": 1.0114383542908087E18,
+        "activities": [
+            "clean"
+        ]
+    },
+    {
+        "score": 1.1066777249795785E21,
+        "activities": [
+            "go_chair"
+        ]
+    },
+    {
+        "score": 8.499033179506128E16,
+        "activities": [
+            "dress_up_outdoor"
+        ]
+    },
+    {
+        "score": 2.8442823762224123E18,
+        "activities": [
+            "brush_teeth"
+        ]
+    },
+    {
+        "score": 4.3183899799716134E17,
+        "activities": [
+            "use_the_computer"
+        ]
+    },
+    {
+        "score": 1.8292671900395571E19,
+        "activities": [
+            "wash_hands"
+        ]
+    },
+    {
+        "score": 2.866665968834898E19,
+        "activities": [
+            "wc_do"
+        ]
+    },
+    {
+        "score": 4.4255208253151444E14,
+        "activities": [
+            "work"
+        ]
+    },
+    {
+        "score": 3.7888096622095918E18,
+        "activities": [
+            "get_clothes"
+        ]
+    },
+    {
+        "score": 3.608757328364472E20,
+        "activities": [
+            "go_kitchen_shelf"
+        ]
+    },
+    {
+        "score": 2.9049481856230185E18,
+        "activities": [
+            "go_bed"
+        ]
+    },
+    {
+        "score": 8.01417242754554E19,
+        "activities": [
+            "go_wardrobe"
+        ]
+    }
+]

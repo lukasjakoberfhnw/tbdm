@@ -1,0 +1,21 @@
+Cluster 13: pack_goods
+Cluster 17: go_windows, raise_blinds, open_windows
+Cluster 0: go_shoe_shelf, dress_up_outdoor, go_workplace, work
+Cluster 16: brush_teeth, go_bed, sleep_in_bed
+Cluster 2: have_bath, go_bathroom_sink, wash_hands, go_fridge
+Cluster 11: get_food_from_fridge, go_chair, rest_in_chair, go_kitchen_shelf
+Cluster 15: go_exercise_place, do_exercise
+Cluster 12: dress_down_outdoor, go_wardrobe, change_clothes, finish_walk
+Cluster 4: go_book_shelf, clean
+Cluster 1: go_outside
+Cluster 5: go_to start
+Cluster 6: go_entrace, interact_with_man, go_computer, switch_computer_off
+Cluster 8: get_clothes
+Cluster 7: get_bread, go_dining_table, eat_cold_meal
+Cluster 18: put_plate_to_sink, go_wc, wc_do, wc_flush
+Cluster 3: get_food
+Cluster 9: get_glass, go_kitchen_sink, get_water, drink_water
+Cluster 10: switch_computer_on, go_computer_chair, use_the_computer
+Cluster 14: go_bathtub
+Cluster 20: wash_dishes
+Cluster 19: close_windows, lower_blinds

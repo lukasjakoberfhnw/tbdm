@@ -1,0 +1,295 @@
+[
+    {
+        "score": 2186,
+        "activities": [
+            "change_clothes"
+        ]
+    },
+    {
+        "score": 609,
+        "activities": [
+            "finish_walk",
+            "go_computer_chair"
+        ]
+    },
+    {
+        "score": 698,
+        "activities": [
+            "go_workplace"
+        ]
+    },
+    {
+        "score": 465,
+        "activities": [
+            "get_clothes"
+        ]
+    },
+    {
+        "score": 502,
+        "activities": [
+            "have_bath"
+        ]
+    },
+    {
+        "score": 320,
+        "activities": [
+            "go_bathtub"
+        ]
+    },
+    {
+        "score": 2914,
+        "activities": [
+            "drink_water"
+        ]
+    },
+    {
+        "score": 65,
+        "activities": [
+            "get_food"
+        ]
+    },
+    {
+        "score": 104,
+        "activities": [
+            "clean"
+        ]
+    },
+    {
+        "score": 50,
+        "activities": [
+            "go_exercise_place",
+            "go_book_shelf"
+        ]
+    },
+    {
+        "score": 928,
+        "activities": [
+            "work"
+        ]
+    },
+    {
+        "score": 64,
+        "activities": [
+            "open_windows"
+        ]
+    },
+    {
+        "score": 1749,
+        "activities": [
+            "wc_do"
+        ]
+    },
+    {
+        "score": 1501,
+        "activities": [
+            "wc_flush"
+        ]
+    },
+    {
+        "score": 3020,
+        "activities": [
+            "get_glass"
+        ]
+    },
+    {
+        "score": 362,
+        "activities": [
+            "go_entrace"
+        ]
+    },
+    {
+        "score": 390,
+        "activities": [
+            "brush_teeth"
+        ]
+    },
+    {
+        "score": 827,
+        "activities": [
+            "get_bread"
+        ]
+    },
+    {
+        "score": 2434,
+        "activities": [
+            "wash_hands"
+        ]
+    },
+    {
+        "score": 887,
+        "activities": [
+            "dress_up_outdoor",
+            "dress_down_outdoor"
+        ]
+    },
+    {
+        "score": 852,
+        "activities": [
+            "get_food_from_fridge"
+        ]
+    },
+    {
+        "score": 969,
+        "activities": [
+            "go_computer"
+        ]
+    },
+    {
+        "score": 728,
+        "activities": [
+            "go_dining_table"
+        ]
+    },
+    {
+        "score": 2408,
+        "activities": [
+            "go_kitchen_shelf"
+        ]
+    },
+    {
+        "score": 816,
+        "activities": [
+            "eat_cold_meal"
+        ]
+    },
+    {
+        "score": 773,
+        "activities": [
+            "go_bed"
+        ]
+    },
+    {
+        "score": 1567,
+        "activities": [
+            "go_bathroom_sink"
+        ]
+    },
+    {
+        "score": 99,
+        "activities": [
+            "do_exercise"
+        ]
+    },
+    {
+        "score": 657,
+        "activities": [
+            "go_fridge"
+        ]
+    },
+    {
+        "score": 592,
+        "activities": [
+            "interact_with_man"
+        ]
+    },
+    {
+        "score": 3050,
+        "activities": [
+            "get_water"
+        ]
+    },
+    {
+        "score": 15,
+        "activities": [
+            "go_to start"
+        ]
+    },
+    {
+        "score": 721,
+        "activities": [
+            "switch_computer_off",
+            "switch_computer_on"
+        ]
+    },
+    {
+        "score": 715,
+        "activities": [
+            "use_the_computer"
+        ]
+    },
+    {
+        "score": 1161,
+        "activities": [
+            "go_wc"
+        ]
+    },
+    {
+        "score": 379,
+        "activities": [
+            "sleep_in_bed"
+        ]
+    },
+    {
+        "score": 5348,
+        "activities": [
+            "rest_in_chair"
+        ]
+    },
+    {
+        "score": 2142,
+        "activities": [
+            "go_kitchen_sink"
+        ]
+    },
+    {
+        "score": 59,
+        "activities": [
+            "go_outside"
+        ]
+    },
+    {
+        "score": 46,
+        "activities": [
+            "lower_blinds"
+        ]
+    },
+    {
+        "score": 808,
+        "activities": [
+            "put_plate_to_sink"
+        ]
+    },
+    {
+        "score": 32,
+        "activities": [
+            "pack_goods"
+        ]
+    },
+    {
+        "score": 62,
+        "activities": [
+            "close_windows",
+            "raise_blinds"
+        ]
+    },
+    {
+        "score": 93,
+        "activities": [
+            "go_windows"
+        ]
+    },
+    {
+        "score": 1301,
+        "activities": [
+            "go_wardrobe"
+        ]
+    },
+    {
+        "score": 1019,
+        "activities": [
+            "go_shoe_shelf"
+        ]
+    },
+    {
+        "score": 3025,
+        "activities": [
+            "go_chair"
+        ]
+    },
+    {
+        "score": 31,
+        "activities": [
+            "wash_dishes"
+        ]
+    }
+]

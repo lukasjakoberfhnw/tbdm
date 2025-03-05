@@ -1,0 +1,15 @@
+[
+{"members": ["have_bath", "go_bathroom_sink"]},
+{"members": ["go_outside", "get_food"]},
+{"members": ["go_computer_chair", "switch_computer_on", "go_computer", "use_the_computer"]},
+{"members": ["sleep_in_bed", "go_bed"]},
+{"members": ["raise_blinds", "open_windows"]},
+{"members": ["go_entrace", "interact_with_man"]},
+{"members": ["get_glass", "go_kitchen_shelf"]},
+{"members": ["get_food_from_fridge", "go_fridge"]},
+{"members": ["drink_water", "eat_cold_meal", "get_water", "go_kitchen_sink"]},
+{"members": ["dress_down_outdoor", "change_clothes", "work", "go_wardrobe", "go_shoe_shelf", "dress_up_outdoor", "go_workplace"]},
+{"members": ["wc_flush", "go_wc", "wc_do"]},
+{"members": ["go_chair", "rest_in_chair"]},
+{"members": ["close_windows", "lower_blinds"]}
+]

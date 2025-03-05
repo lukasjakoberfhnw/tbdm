@@ -1,0 +1,214 @@
+[
+    {
+        "id": "go_computer_chair",
+        "label": 1176821039104
+    },
+    {
+        "id": "wc_flush",
+        "label": 1176821039104
+    },
+    {
+        "id": "finish_walk",
+        "label": 1176821039104
+    },
+    {
+        "id": "raise_blinds",
+        "label": 17179869185
+    },
+    {
+        "id": "switch_computer_off",
+        "label": 1176821039104
+    },
+    {
+        "id": "put_plate_to_sink",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_kitchen_shelf",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_outside",
+        "label": 1022202216448
+    },
+    {
+        "id": "dress_down_outdoor",
+        "label": 1030792151040
+    },
+    {
+        "id": "go_bathtub",
+        "label": 1030792151041
+    },
+    {
+        "id": "go_dining_table",
+        "label": 1176821039104
+    },
+    {
+        "id": "sleep_in_bed",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_entrace",
+        "label": 1176821039104
+    },
+    {
+        "id": "work",
+        "label": 1090921693184
+    },
+    {
+        "id": "get_food_from_fridge",
+        "label": 249108103168
+    },
+    {
+        "id": "pack_goods",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_bathroom_sink",
+        "label": 1176821039104
+    },
+    {
+        "id": "dress_up_outdoor",
+        "label": 309237645312
+    },
+    {
+        "id": "use_the_computer",
+        "label": 1176821039104
+    },
+    {
+        "id": "drink_water",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_to start",
+        "label": 1176821039104
+    },
+    {
+        "id": "clean",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_wc",
+        "label": 1176821039104
+    },
+    {
+        "id": "close_windows",
+        "label": 1176821039104
+    },
+    {
+        "id": "brush_teeth",
+        "label": 369367187456
+    },
+    {
+        "id": "get_clothes",
+        "label": 1176821039104
+    },
+    {
+        "id": "have_bath",
+        "label": 1279900254208
+    },
+    {
+        "id": "change_clothes",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_book_shelf",
+        "label": 1176821039104
+    },
+    {
+        "id": "wc_do",
+        "label": 1176821039104
+    },
+    {
+        "id": "get_glass",
+        "label": 1176821039104
+    },
+    {
+        "id": "rest_in_chair",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_computer",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_workplace",
+        "label": 1331439861761
+    },
+    {
+        "id": "do_exercise",
+        "label": 1176821039104
+    },
+    {
+        "id": "switch_computer_on",
+        "label": 1357209665536
+    },
+    {
+        "id": "open_windows",
+        "label": 1176821039104
+    },
+    {
+        "id": "get_food",
+        "label": 1408749273088
+    },
+    {
+        "id": "go_bed",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_wardrobe",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_windows",
+        "label": 1176821039104
+    },
+    {
+        "id": "lower_blinds",
+        "label": 1176821039104
+    },
+    {
+        "id": "get_water",
+        "label": 1176821039104
+    },
+    {
+        "id": "interact_with_man",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_kitchen_sink",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_fridge",
+        "label": 712964571136
+    },
+    {
+        "id": "get_bread",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_chair",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_shoe_shelf",
+        "label": 1649267441664
+    },
+    {
+        "id": "eat_cold_meal",
+        "label": 1176821039104
+    },
+    {
+        "id": "wash_hands",
+        "label": 1176821039104
+    },
+    {
+        "id": "wash_dishes",
+        "label": 1176821039104
+    },
+    {
+        "id": "go_exercise_place",
+        "label": 1176821039104
+    }
+]
