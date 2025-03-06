@@ -16,3 +16,5 @@ lib_managed/
 data/sorted_logfile.csv
 
 lib/
+
+.venv/
