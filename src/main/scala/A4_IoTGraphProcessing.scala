@@ -14,7 +14,7 @@ import java.io.PrintWriter
 // Runs Label Propagation Algorithm (LPA) to detect activity clusters.
 // Prints detected clusters for analysis.
 
-object IoTGraphProcessing {
+object A4_IoTGraphProcessing {
   def main(args: Array[String]): Unit = {
     // Initialize Spark Session
     val spark = SparkSession.builder()
