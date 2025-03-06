@@ -224,19 +224,21 @@ def draw_graph(edges):
 
 
 if __name__ == "__main__":
+    main()
     # ground_edges = get_ground_truth()
-    test_results: list[TestResult] = []
-    file_names = os.listdir("./results")
-    for file_name in file_names:
-        loaded_edges = get_cluster_result("./results/" + file_name)
-        test_results.append(TestResult(file_name, loaded_edges))
-        print(len(loaded_edges))
+    # test_results: list[TestResult] = []
+    # file_names = os.listdir("./results")
+    # for file_name in file_names:
+    #     loaded_edges = get_cluster_result("./results/" + file_name)
+    #     test_results.append(TestResult(file_name, loaded_edges))
+    #     print(len(loaded_edges))
 
-    get_good_edges = get_cluster_result("./results/A1_activity_clustering.txt")
+    # get_good_edges = get_cluster_result("./results/A1_activity_clustering.txt")
 
 
-    # print(test_results[3].name)
-    draw_graph(get_good_edges)
+    # # print(test_results[3].name)
+    # draw_graph(get_good_edges)
+
 
 
 # if possible -> create graph visualizations for DFG for nice presentation
