@@ -4,6 +4,8 @@ from helper import map_predicted_clusters_to_ground_truth, evaluate_clustering
 from models import Edge, TestResult
 import json
 import random
+import networkx as nx
+import matplotlib.pyplot as plt
 
 def get_ground_truth():
     ground_truth = pd.read_csv("./data/sorted_logfile.csv")
@@ -196,10 +198,45 @@ def main():
     with open("final_results_slim_sorted.json", "w") as file:
         file.write(sorted_final_evaluation_slim)
 
+def draw_graph(edges):
+    G = nx.Graph()
+
+    # Add edges and assign clusters
+    clusters = {}
+    for edge in edges:
+        G.add_edge(edge.source, edge.destination)
+        clusters[edge.source] = edge.cluster_id
+        clusters[edge.destination] = edge.cluster_id
+
+    # Generate unique colors for clusters
+    cluster_ids = list(set(clusters.values()))
+    cluster_colors = {cid: f"#{random.randint(0, 0xFFFFFF):06x}" for cid in cluster_ids}
+
+    # Assign colors based on cluster
+    node_colors = [cluster_colors[clusters[node]] for node in G.nodes()]
+
+    # Draw the graph
+    plt.figure(figsize=(8, 6), clear=True)
+    pos = nx.spring_layout(G, seed=42)  # Layout for visualization
+    nx.draw(G, pos, node_color=node_colors, with_labels=True, edge_color="gray", node_size=700, font_size=10)
+    plt.title("Clustered Graph Visualization")
+    plt.show()
 
 
 if __name__ == "__main__":
-    main()
+    # ground_edges = get_ground_truth()
+    test_results: list[TestResult] = []
+    file_names = os.listdir("./results")
+    for file_name in file_names:
+        loaded_edges = get_cluster_result("./results/" + file_name)
+        test_results.append(TestResult(file_name, loaded_edges))
+        print(len(loaded_edges))
+
+    get_good_edges = get_cluster_result("./results/A1_activity_clustering.txt")
+
+
+    # print(test_results[3].name)
+    draw_graph(get_good_edges)
 
 
 # if possible -> create graph visualizations for DFG for nice presentation
