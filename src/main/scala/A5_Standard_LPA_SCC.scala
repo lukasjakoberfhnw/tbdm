@@ -97,10 +97,10 @@ object A5_Standard_LPA_SCC {
 
     // Step 7: Run Clustering Algorithms and Save Results
     val labelPropagation = LabelPropagation.run(graph, 5)
-    printAndSaveClusters("Label Propagation", labelPropagation.vertices, "A5__lpa_clusters.txt")
+    printAndSaveClusters("Label Propagation", labelPropagation.vertices, "A5_lpa_clusters.txt")
 
     val stronglyConnected = graph.stronglyConnectedComponents(5)
-    printAndSaveClusters("Strongly Connected Components", stronglyConnected.vertices, "A5__scc_clusters.txt")
+    printAndSaveClusters("Strongly Connected Components", stronglyConnected.vertices, "A5_scc_clusters.txt")
 
     spark.stop()
   }

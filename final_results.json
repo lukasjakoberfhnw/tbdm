@@ -1,0 +1,2556 @@
+[
+    {
+        "name": "A10_aggregated.txt",
+        "edges": [
+            {
+                "source": "brush_teeth",
+                "destination": "go_computer_chair",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "go_bed",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_bed",
+                "destination": "finish_walk",
+                "cluster_id": "4"
+            },
+            {
+                "source": "finish_walk",
+                "destination": "get_water",
+                "cluster_id": "4"
+            },
+            {
+                "source": "get_water",
+                "destination": "go_kitchen_sink",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_kitchen_sink",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_bathroom_sink",
+                "destination": "wash_dishes",
+                "cluster_id": "4"
+            },
+            {
+                "source": "wash_dishes",
+                "destination": "drink_water",
+                "cluster_id": "4"
+            },
+            {
+                "source": "drink_water",
+                "destination": "change_clothes",
+                "cluster_id": "4"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "go_kitchen_shelf",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_kitchen_shelf",
+                "destination": "switch_computer_on",
+                "cluster_id": "4"
+            },
+            {
+                "source": "switch_computer_on",
+                "destination": "go_entrace",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_entrace",
+                "destination": "go_fridge",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_fridge",
+                "destination": "wc_flush",
+                "cluster_id": "4"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "go_wardrobe",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_wardrobe",
+                "destination": "put_plate_to_sink",
+                "cluster_id": "4"
+            },
+            {
+                "source": "put_plate_to_sink",
+                "destination": "dress_up_outdoor",
+                "cluster_id": "4"
+            },
+            {
+                "source": "dress_up_outdoor",
+                "destination": "interact_with_man",
+                "cluster_id": "4"
+            },
+            {
+                "source": "interact_with_man",
+                "destination": "switch_computer_off",
+                "cluster_id": "4"
+            },
+            {
+                "source": "switch_computer_off",
+                "destination": "go_workplace",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_workplace",
+                "destination": "rest_in_chair",
+                "cluster_id": "4"
+            },
+            {
+                "source": "rest_in_chair",
+                "destination": "have_bath",
+                "cluster_id": "4"
+            },
+            {
+                "source": "have_bath",
+                "destination": "go_bathtub",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_bathtub",
+                "destination": "go_chair",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_chair",
+                "destination": "dress_down_outdoor",
+                "cluster_id": "4"
+            },
+            {
+                "source": "dress_down_outdoor",
+                "destination": "get_food_from_fridge",
+                "cluster_id": "4"
+            },
+            {
+                "source": "get_food_from_fridge",
+                "destination": "get_clothes",
+                "cluster_id": "4"
+            },
+            {
+                "source": "get_clothes",
+                "destination": "get_bread",
+                "cluster_id": "4"
+            },
+            {
+                "source": "get_bread",
+                "destination": "work",
+                "cluster_id": "4"
+            },
+            {
+                "source": "work",
+                "destination": "wash_hands",
+                "cluster_id": "4"
+            },
+            {
+                "source": "wash_hands",
+                "destination": "sleep_in_bed",
+                "cluster_id": "4"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "do_exercise",
+                "cluster_id": "4"
+            },
+            {
+                "source": "do_exercise",
+                "destination": "get_glass",
+                "cluster_id": "4"
+            },
+            {
+                "source": "get_glass",
+                "destination": "go_computer",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_computer",
+                "destination": "go_shoe_shelf",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_shoe_shelf",
+                "destination": "use_the_computer",
+                "cluster_id": "4"
+            },
+            {
+                "source": "use_the_computer",
+                "destination": "go_wc",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_wc",
+                "destination": "go_dining_table",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_dining_table",
+                "destination": "eat_cold_meal",
+                "cluster_id": "4"
+            },
+            {
+                "source": "eat_cold_meal",
+                "destination": "wc_do",
+                "cluster_id": "4"
+            },
+            {
+                "source": "clean",
+                "destination": "go_book_shelf",
+                "cluster_id": "2"
+            },
+            {
+                "source": "raise_blinds",
+                "destination": "open_windows",
+                "cluster_id": "1"
+            },
+            {
+                "source": "go_outside",
+                "destination": "get_food",
+                "cluster_id": "0"
+            },
+            {
+                "source": "close_windows",
+                "destination": "lower_blinds",
+                "cluster_id": "10"
+            }
+        ],
+        "found_relationships": 7,
+        "ratio_found": 0.11666666666666667,
+        "nmi": 0.5278088641478063,
+        "ari": 0.4625760890511114,
+        "f1": 0.06898656898656899,
+        "accuracy": 0.46153846153846156,
+        "custom_found": 0.1346153846153846
+    },
+    {
+        "name": "A11_simple_random_walk_clusters.txt",
+        "edges": [
+            {
+                "source": "brush_teeth",
+                "destination": "go_computer_chair",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "go_bed",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_bed",
+                "destination": "open_windows",
+                "cluster_id": "0"
+            },
+            {
+                "source": "open_windows",
+                "destination": "pack_goods",
+                "cluster_id": "0"
+            },
+            {
+                "source": "pack_goods",
+                "destination": "finish_walk",
+                "cluster_id": "0"
+            },
+            {
+                "source": "finish_walk",
+                "destination": "get_water",
+                "cluster_id": "0"
+            },
+            {
+                "source": "get_water",
+                "destination": "go_book_shelf",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_book_shelf",
+                "destination": "get_food",
+                "cluster_id": "0"
+            },
+            {
+                "source": "get_food",
+                "destination": "go_kitchen_sink",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_kitchen_sink",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_bathroom_sink",
+                "destination": "wash_dishes",
+                "cluster_id": "0"
+            },
+            {
+                "source": "wash_dishes",
+                "destination": "drink_water",
+                "cluster_id": "0"
+            },
+            {
+                "source": "drink_water",
+                "destination": "change_clothes",
+                "cluster_id": "0"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "go_kitchen_shelf",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_kitchen_shelf",
+                "destination": "switch_computer_on",
+                "cluster_id": "0"
+            },
+            {
+                "source": "switch_computer_on",
+                "destination": "go_entrace",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_entrace",
+                "destination": "go_fridge",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_fridge",
+                "destination": "go_wardrobe",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_wardrobe",
+                "destination": "wc_flush",
+                "cluster_id": "0"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "go_outside",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_outside",
+                "destination": "dress_up_outdoor",
+                "cluster_id": "0"
+            },
+            {
+                "source": "dress_up_outdoor",
+                "destination": "go_exercise_place",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_exercise_place",
+                "destination": "put_plate_to_sink",
+                "cluster_id": "0"
+            },
+            {
+                "source": "put_plate_to_sink",
+                "destination": "interact_with_man",
+                "cluster_id": "0"
+            },
+            {
+                "source": "interact_with_man",
+                "destination": "lower_blinds",
+                "cluster_id": "0"
+            },
+            {
+                "source": "lower_blinds",
+                "destination": "switch_computer_off",
+                "cluster_id": "0"
+            },
+            {
+                "source": "switch_computer_off",
+                "destination": "go_workplace",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_workplace",
+                "destination": "have_bath",
+                "cluster_id": "0"
+            },
+            {
+                "source": "have_bath",
+                "destination": "rest_in_chair",
+                "cluster_id": "0"
+            },
+            {
+                "source": "rest_in_chair",
+                "destination": "go_windows",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_windows",
+                "destination": "close_windows",
+                "cluster_id": "0"
+            },
+            {
+                "source": "close_windows",
+                "destination": "go_bathtub",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_bathtub",
+                "destination": "go_chair",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_chair",
+                "destination": "dress_down_outdoor",
+                "cluster_id": "0"
+            },
+            {
+                "source": "dress_down_outdoor",
+                "destination": "get_food_from_fridge",
+                "cluster_id": "0"
+            },
+            {
+                "source": "get_food_from_fridge",
+                "destination": "get_clothes",
+                "cluster_id": "0"
+            },
+            {
+                "source": "get_clothes",
+                "destination": "get_bread",
+                "cluster_id": "0"
+            },
+            {
+                "source": "get_bread",
+                "destination": "work",
+                "cluster_id": "0"
+            },
+            {
+                "source": "work",
+                "destination": "wash_hands",
+                "cluster_id": "0"
+            },
+            {
+                "source": "wash_hands",
+                "destination": "sleep_in_bed",
+                "cluster_id": "0"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "do_exercise",
+                "cluster_id": "0"
+            },
+            {
+                "source": "do_exercise",
+                "destination": "raise_blinds",
+                "cluster_id": "0"
+            },
+            {
+                "source": "raise_blinds",
+                "destination": "get_glass",
+                "cluster_id": "0"
+            },
+            {
+                "source": "get_glass",
+                "destination": "clean",
+                "cluster_id": "0"
+            },
+            {
+                "source": "clean",
+                "destination": "go_computer",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_computer",
+                "destination": "go_shoe_shelf",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_shoe_shelf",
+                "destination": "use_the_computer",
+                "cluster_id": "0"
+            },
+            {
+                "source": "use_the_computer",
+                "destination": "go_wc",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_wc",
+                "destination": "go_dining_table",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_dining_table",
+                "destination": "eat_cold_meal",
+                "cluster_id": "0"
+            },
+            {
+                "source": "eat_cold_meal",
+                "destination": "go_to start",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_to start",
+                "destination": "wc_do",
+                "cluster_id": "0"
+            }
+        ],
+        "found_relationships": 4,
+        "ratio_found": 0.06666666666666667,
+        "nmi": 0.49595626589075414,
+        "ari": 0.5210118090428669,
+        "f1": 0.00261437908496732,
+        "accuracy": 0.34615384615384615,
+        "custom_found": 0.038461538461538464
+    },
+    {
+        "name": "A12_process_mining.txt",
+        "edges": [
+            {
+                "source": "work",
+                "destination": "dress_up_outdoor",
+                "cluster_id": "dress_up_outdoor"
+            },
+            {
+                "source": "go_kitchen_sink",
+                "destination": "go_bed",
+                "cluster_id": "go_kitchen_sink"
+            },
+            {
+                "source": "go_bed",
+                "destination": "go_computer_chair",
+                "cluster_id": "go_kitchen_sink"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "go_bathtub",
+                "cluster_id": "go_kitchen_sink"
+            },
+            {
+                "source": "go_bathtub",
+                "destination": "go_shoe_shelf",
+                "cluster_id": "go_kitchen_sink"
+            },
+            {
+                "source": "go_book_shelf",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "go_kitchen_shelf"
+            },
+            {
+                "source": "go_bathroom_sink",
+                "destination": "go_kitchen_shelf",
+                "cluster_id": "go_kitchen_shelf"
+            },
+            {
+                "source": "go_kitchen_shelf",
+                "destination": "go_computer",
+                "cluster_id": "go_kitchen_shelf"
+            },
+            {
+                "source": "go_computer",
+                "destination": "go_entrace",
+                "cluster_id": "go_kitchen_shelf"
+            },
+            {
+                "source": "go_fridge",
+                "destination": "go_dining_table",
+                "cluster_id": "go_chair"
+            },
+            {
+                "source": "go_dining_table",
+                "destination": "go_chair",
+                "cluster_id": "go_chair"
+            },
+            {
+                "source": "go_chair",
+                "destination": "go_wc",
+                "cluster_id": "go_chair"
+            },
+            {
+                "source": "go_wc",
+                "destination": "go_wardrobe",
+                "cluster_id": "go_chair"
+            },
+            {
+                "source": "open_windows",
+                "destination": "go_windows",
+                "cluster_id": "go_windows"
+            },
+            {
+                "source": "go_windows",
+                "destination": "lower_blinds",
+                "cluster_id": "go_windows"
+            },
+            {
+                "source": "get_clothes",
+                "destination": "wc_do",
+                "cluster_id": "wc_do"
+            },
+            {
+                "source": "wc_do",
+                "destination": "put_plate_to_sink",
+                "cluster_id": "wc_do"
+            },
+            {
+                "source": "put_plate_to_sink",
+                "destination": "change_clothes",
+                "cluster_id": "wc_do"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "switch_computer_off",
+                "cluster_id": "wc_do"
+            },
+            {
+                "source": "get_glass",
+                "destination": "rest_in_chair",
+                "cluster_id": "rest_in_chair"
+            },
+            {
+                "source": "rest_in_chair",
+                "destination": "dress_down_outdoor",
+                "cluster_id": "rest_in_chair"
+            },
+            {
+                "source": "dress_down_outdoor",
+                "destination": "finish_walk",
+                "cluster_id": "rest_in_chair"
+            },
+            {
+                "source": "finish_walk",
+                "destination": "clean",
+                "cluster_id": "rest_in_chair"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "raise_blinds",
+                "cluster_id": "drink_water"
+            },
+            {
+                "source": "raise_blinds",
+                "destination": "wash_hands",
+                "cluster_id": "drink_water"
+            },
+            {
+                "source": "wash_hands",
+                "destination": "brush_teeth",
+                "cluster_id": "drink_water"
+            },
+            {
+                "source": "brush_teeth",
+                "destination": "drink_water",
+                "cluster_id": "drink_water"
+            },
+            {
+                "source": "close_windows",
+                "destination": "switch_computer_on",
+                "cluster_id": "eat_cold_meal"
+            },
+            {
+                "source": "switch_computer_on",
+                "destination": "interact_with_man",
+                "cluster_id": "eat_cold_meal"
+            },
+            {
+                "source": "interact_with_man",
+                "destination": "eat_cold_meal",
+                "cluster_id": "eat_cold_meal"
+            },
+            {
+                "source": "eat_cold_meal",
+                "destination": "have_bath",
+                "cluster_id": "eat_cold_meal"
+            },
+            {
+                "source": "get_food_from_fridge",
+                "destination": "get_bread",
+                "cluster_id": "get_food_from_fridge"
+            },
+            {
+                "source": "get_bread",
+                "destination": "sleep_in_bed",
+                "cluster_id": "get_food_from_fridge"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "use_the_computer",
+                "cluster_id": "get_food_from_fridge"
+            }
+        ],
+        "found_relationships": 1,
+        "ratio_found": 0.016666666666666666,
+        "nmi": 0.3617981310492105,
+        "ari": -0.11231787062107262,
+        "f1": 0.011764705882352941,
+        "accuracy": 0.3269230769230769,
+        "custom_found": 0.019230769230769232
+    },
+    {
+        "name": "A1_activity_clustering.txt",
+        "edges": [
+            {
+                "source": "go_windows",
+                "destination": "raise_blinds",
+                "cluster_id": "17"
+            },
+            {
+                "source": "raise_blinds",
+                "destination": "open_windows",
+                "cluster_id": "17"
+            },
+            {
+                "source": "go_shoe_shelf",
+                "destination": "dress_up_outdoor",
+                "cluster_id": "0"
+            },
+            {
+                "source": "dress_up_outdoor",
+                "destination": "go_workplace",
+                "cluster_id": "0"
+            },
+            {
+                "source": "go_workplace",
+                "destination": "work",
+                "cluster_id": "0"
+            },
+            {
+                "source": "brush_teeth",
+                "destination": "go_bed",
+                "cluster_id": "16"
+            },
+            {
+                "source": "go_bed",
+                "destination": "sleep_in_bed",
+                "cluster_id": "16"
+            },
+            {
+                "source": "have_bath",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "2"
+            },
+            {
+                "source": "go_bathroom_sink",
+                "destination": "wash_hands",
+                "cluster_id": "2"
+            },
+            {
+                "source": "wash_hands",
+                "destination": "go_fridge",
+                "cluster_id": "2"
+            },
+            {
+                "source": "get_food_from_fridge",
+                "destination": "go_chair",
+                "cluster_id": "11"
+            },
+            {
+                "source": "go_chair",
+                "destination": "rest_in_chair",
+                "cluster_id": "11"
+            },
+            {
+                "source": "rest_in_chair",
+                "destination": "go_kitchen_shelf",
+                "cluster_id": "11"
+            },
+            {
+                "source": "go_exercise_place",
+                "destination": "do_exercise",
+                "cluster_id": "15"
+            },
+            {
+                "source": "dress_down_outdoor",
+                "destination": "go_wardrobe",
+                "cluster_id": "12"
+            },
+            {
+                "source": "go_wardrobe",
+                "destination": "change_clothes",
+                "cluster_id": "12"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "finish_walk",
+                "cluster_id": "12"
+            },
+            {
+                "source": "go_book_shelf",
+                "destination": "clean",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_entrace",
+                "destination": "interact_with_man",
+                "cluster_id": "6"
+            },
+            {
+                "source": "interact_with_man",
+                "destination": "go_computer",
+                "cluster_id": "6"
+            },
+            {
+                "source": "go_computer",
+                "destination": "switch_computer_off",
+                "cluster_id": "6"
+            },
+            {
+                "source": "get_bread",
+                "destination": "go_dining_table",
+                "cluster_id": "7"
+            },
+            {
+                "source": "go_dining_table",
+                "destination": "eat_cold_meal",
+                "cluster_id": "7"
+            },
+            {
+                "source": "put_plate_to_sink",
+                "destination": "go_wc",
+                "cluster_id": "18"
+            },
+            {
+                "source": "go_wc",
+                "destination": "wc_do",
+                "cluster_id": "18"
+            },
+            {
+                "source": "wc_do",
+                "destination": "wc_flush",
+                "cluster_id": "18"
+            },
+            {
+                "source": "get_glass",
+                "destination": "go_kitchen_sink",
+                "cluster_id": "9"
+            },
+            {
+                "source": "go_kitchen_sink",
+                "destination": "get_water",
+                "cluster_id": "9"
+            },
+            {
+                "source": "get_water",
+                "destination": "drink_water",
+                "cluster_id": "9"
+            },
+            {
+                "source": "switch_computer_on",
+                "destination": "go_computer_chair",
+                "cluster_id": "10"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "use_the_computer",
+                "cluster_id": "10"
+            },
+            {
+                "source": "close_windows",
+                "destination": "lower_blinds",
+                "cluster_id": "19"
+            }
+        ],
+        "found_relationships": 31,
+        "ratio_found": 0.5166666666666667,
+        "nmi": 0.5581547370857057,
+        "ari": 0.08189621711648346,
+        "f1": 0.4025757575757576,
+        "accuracy": 0.75,
+        "custom_found": 0.4423076923076923
+    },
+    {
+        "name": "A2_activity_neighbourhood.txt",
+        "edges": [
+            {
+                "source": "brush_teeth",
+                "destination": "go_bed",
+                "cluster_id": "11"
+            },
+            {
+                "source": "go_bed",
+                "destination": "sleep_in_bed",
+                "cluster_id": "11"
+            },
+            {
+                "source": "put_plate_to_sink",
+                "destination": "interact_with_man",
+                "cluster_id": "4"
+            },
+            {
+                "source": "interact_with_man",
+                "destination": "eat_cold_meal",
+                "cluster_id": "4"
+            },
+            {
+                "source": "eat_cold_meal",
+                "destination": "go_entrace",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_entrace",
+                "destination": "go_dining_table",
+                "cluster_id": "4"
+            },
+            {
+                "source": "rest_in_chair",
+                "destination": "do_exercise",
+                "cluster_id": "13"
+            },
+            {
+                "source": "do_exercise",
+                "destination": "lower_blinds",
+                "cluster_id": "13"
+            },
+            {
+                "source": "lower_blinds",
+                "destination": "close_windows",
+                "cluster_id": "13"
+            },
+            {
+                "source": "close_windows",
+                "destination": "go_chair",
+                "cluster_id": "13"
+            },
+            {
+                "source": "go_chair",
+                "destination": "go_exercise_place",
+                "cluster_id": "13"
+            },
+            {
+                "source": "raise_blinds",
+                "destination": "open_windows",
+                "cluster_id": "8"
+            },
+            {
+                "source": "switch_computer_off",
+                "destination": "go_computer_chair",
+                "cluster_id": "1"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "switch_computer_on",
+                "cluster_id": "1"
+            },
+            {
+                "source": "switch_computer_on",
+                "destination": "go_computer",
+                "cluster_id": "1"
+            },
+            {
+                "source": "go_computer",
+                "destination": "use_the_computer",
+                "cluster_id": "1"
+            },
+            {
+                "source": "get_clothes",
+                "destination": "change_clothes",
+                "cluster_id": "5"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "finish_walk",
+                "cluster_id": "5"
+            },
+            {
+                "source": "finish_walk",
+                "destination": "go_bathtub",
+                "cluster_id": "5"
+            },
+            {
+                "source": "go_bathtub",
+                "destination": "have_bath",
+                "cluster_id": "5"
+            },
+            {
+                "source": "have_bath",
+                "destination": "go_wardrobe",
+                "cluster_id": "5"
+            },
+            {
+                "source": "go_kitchen_sink",
+                "destination": "get_glass",
+                "cluster_id": "7"
+            },
+            {
+                "source": "get_glass",
+                "destination": "drink_water",
+                "cluster_id": "7"
+            },
+            {
+                "source": "drink_water",
+                "destination": "go_kitchen_shelf",
+                "cluster_id": "7"
+            },
+            {
+                "source": "go_kitchen_shelf",
+                "destination": "get_water",
+                "cluster_id": "7"
+            },
+            {
+                "source": "get_water",
+                "destination": "get_bread",
+                "cluster_id": "7"
+            },
+            {
+                "source": "go_fridge",
+                "destination": "get_food_from_fridge",
+                "cluster_id": "2"
+            },
+            {
+                "source": "wc_do",
+                "destination": "wc_flush",
+                "cluster_id": "9"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "wash_hands",
+                "cluster_id": "9"
+            },
+            {
+                "source": "wash_hands",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "9"
+            },
+            {
+                "source": "go_bathroom_sink",
+                "destination": "go_windows",
+                "cluster_id": "9"
+            },
+            {
+                "source": "go_windows",
+                "destination": "go_wc",
+                "cluster_id": "9"
+            },
+            {
+                "source": "clean",
+                "destination": "go_book_shelf",
+                "cluster_id": "6"
+            },
+            {
+                "source": "dress_up_outdoor",
+                "destination": "dress_down_outdoor",
+                "cluster_id": "12"
+            },
+            {
+                "source": "dress_down_outdoor",
+                "destination": "go_workplace",
+                "cluster_id": "12"
+            },
+            {
+                "source": "go_workplace",
+                "destination": "go_shoe_shelf",
+                "cluster_id": "12"
+            },
+            {
+                "source": "go_shoe_shelf",
+                "destination": "work",
+                "cluster_id": "12"
+            },
+            {
+                "source": "work",
+                "destination": "go_outside",
+                "cluster_id": "12"
+            }
+        ],
+        "found_relationships": 16,
+        "ratio_found": 0.26666666666666666,
+        "nmi": 0.41809550437275994,
+        "ari": -0.056843232906304504,
+        "f1": 0.10609756097560975,
+        "accuracy": 0.5384615384615384,
+        "custom_found": 0.21153846153846154
+    },
+    {
+        "name": "A3_graphx_connectedcomponents.txt",
+        "edges": [
+            {
+                "source": "go_wardrobe",
+                "destination": " use_the_computer",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " use_the_computer",
+                "destination": " get_clothes",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " get_clothes",
+                "destination": " sleep_in_bed",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " sleep_in_bed",
+                "destination": " get_food_from_fridge",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " get_food_from_fridge",
+                "destination": " finish_walk",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " finish_walk",
+                "destination": " rest_in_chair",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " rest_in_chair",
+                "destination": " drink_water",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " drink_water",
+                "destination": " have_bath",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " have_bath",
+                "destination": " go_dining_table",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_dining_table",
+                "destination": " go_computer",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_computer",
+                "destination": " wc_flush",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " wc_flush",
+                "destination": " eat_cold_meal",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " eat_cold_meal",
+                "destination": " switch_computer_off",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " switch_computer_off",
+                "destination": " brush_teeth",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " brush_teeth",
+                "destination": " go_fridge",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_fridge",
+                "destination": " change_clothes",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " change_clothes",
+                "destination": " wc_do",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " wc_do",
+                "destination": " go_bathroom_sink",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_bathroom_sink",
+                "destination": " go_computer_chair",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_computer_chair",
+                "destination": " get_water",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " get_water",
+                "destination": " go_bathtub",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_bathtub",
+                "destination": " go_wc",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_wc",
+                "destination": " go_kitchen_shelf",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_kitchen_shelf",
+                "destination": " go_shoe_shelf",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_shoe_shelf",
+                "destination": " put_plate_to_sink",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " put_plate_to_sink",
+                "destination": " work",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " work",
+                "destination": " get_bread",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " get_bread",
+                "destination": " switch_computer_on",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " switch_computer_on",
+                "destination": " go_kitchen_sink",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_kitchen_sink",
+                "destination": " go_bed",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_bed",
+                "destination": " go_chair",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_chair",
+                "destination": " go_workplace",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " go_workplace",
+                "destination": " dress_up_outdoor",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " dress_up_outdoor",
+                "destination": " wash_hands",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " wash_hands",
+                "destination": " dress_down_outdoor",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": " dress_down_outdoor",
+                "destination": " get_glass",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "interact_with_man",
+                "destination": " go_entrace",
+                "cluster_id": "-1058360859"
+            }
+        ],
+        "found_relationships": 0,
+        "ratio_found": 0.0,
+        "nmi": 0.4807448901859953,
+        "ari": 0.36222297390411046,
+        "f1": 0.0,
+        "accuracy": 0.3269230769230769,
+        "custom_found": 0.0
+    },
+    {
+        "name": "A4_iot_graph_processing.txt",
+        "edges": [
+            {
+                "source": "close_windows",
+                "destination": "lower_blinds",
+                "cluster_id": "-689898698"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "dress_up_outdoor",
+                "cluster_id": "-1420372295"
+            },
+            {
+                "source": "dress_up_outdoor",
+                "destination": "dress_down_outdoor",
+                "cluster_id": "-1420372295"
+            },
+            {
+                "source": "dress_down_outdoor",
+                "destination": "go_workplace",
+                "cluster_id": "-1420372295"
+            },
+            {
+                "source": "go_workplace",
+                "destination": "go_bathtub",
+                "cluster_id": "-1420372295"
+            },
+            {
+                "source": "go_bathtub",
+                "destination": "go_shoe_shelf",
+                "cluster_id": "-1420372295"
+            },
+            {
+                "source": "go_shoe_shelf",
+                "destination": "work",
+                "cluster_id": "-1420372295"
+            },
+            {
+                "source": "work",
+                "destination": "get_food",
+                "cluster_id": "-1420372295"
+            },
+            {
+                "source": "get_food",
+                "destination": "go_outside",
+                "cluster_id": "-1420372295"
+            },
+            {
+                "source": "go_outside",
+                "destination": "go_wardrobe",
+                "cluster_id": "-1420372295"
+            },
+            {
+                "source": "get_clothes",
+                "destination": "wc_do",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "wc_do",
+                "destination": "switch_computer_off",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "switch_computer_off",
+                "destination": "go_bed",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_bed",
+                "destination": "wc_flush",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "go_computer_chair",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "raise_blinds",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "raise_blinds",
+                "destination": "wash_hands",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "wash_hands",
+                "destination": "brush_teeth",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "brush_teeth",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_bathroom_sink",
+                "destination": "switch_computer_on",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "switch_computer_on",
+                "destination": "interact_with_man",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "interact_with_man",
+                "destination": "go_computer",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_computer",
+                "destination": "eat_cold_meal",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "eat_cold_meal",
+                "destination": "go_entrace",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_entrace",
+                "destination": "have_bath",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "have_bath",
+                "destination": "go_windows",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_windows",
+                "destination": "go_fridge",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_fridge",
+                "destination": "get_food_from_fridge",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "get_food_from_fridge",
+                "destination": "go_dining_table",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_dining_table",
+                "destination": "get_bread",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "get_bread",
+                "destination": "open_windows",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "open_windows",
+                "destination": "go_wc",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_wc",
+                "destination": "sleep_in_bed",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "use_the_computer",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "put_plate_to_sink",
+                "destination": "go_kitchen_sink",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "go_kitchen_sink",
+                "destination": "get_glass",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "get_glass",
+                "destination": "rest_in_chair",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "rest_in_chair",
+                "destination": "finish_walk",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "finish_walk",
+                "destination": "clean",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "clean",
+                "destination": "do_exercise",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "do_exercise",
+                "destination": "pack_goods",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "pack_goods",
+                "destination": "go_book_shelf",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "go_book_shelf",
+                "destination": "drink_water",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "drink_water",
+                "destination": "go_kitchen_shelf",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "go_kitchen_shelf",
+                "destination": "get_water",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "get_water",
+                "destination": "go_chair",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "go_chair",
+                "destination": "go_exercise_place",
+                "cluster_id": "1149853422"
+            },
+            {
+                "source": "go_exercise_place",
+                "destination": "wash_dishes",
+                "cluster_id": "1149853422"
+            }
+        ],
+        "found_relationships": 7,
+        "ratio_found": 0.11666666666666667,
+        "nmi": 0.4392573450063751,
+        "ari": 0.09291370834887143,
+        "f1": 0.01870748299319728,
+        "accuracy": 0.4423076923076923,
+        "custom_found": 0.11538461538461539
+    },
+    {
+        "name": "A5__lpa_clusters.txt",
+        "edges": [],
+        "found_relationships": 0,
+        "ratio_found": 0.0,
+        "nmi": 0.0,
+        "ari": 0.0,
+        "f1": 0.0,
+        "accuracy": 0.3269230769230769,
+        "custom_found": 0.0
+    },
+    {
+        "name": "A5__scc_clusters.txt",
+        "edges": [],
+        "found_relationships": 0,
+        "ratio_found": 0.0,
+        "nmi": 0.0,
+        "ari": 0.0,
+        "f1": 0.0,
+        "accuracy": 0.3269230769230769,
+        "custom_found": 0.0
+    },
+    {
+        "name": "A6_graphframes_louvain.txt",
+        "edges": [
+            {
+                "source": "go_computer_chair",
+                "destination": "wc_flush",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "finish_walk",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "finish_walk",
+                "destination": "switch_computer_off",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "switch_computer_off",
+                "destination": "put_plate_to_sink",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "put_plate_to_sink",
+                "destination": "go_kitchen_shelf",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_kitchen_shelf",
+                "destination": "go_dining_table",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_dining_table",
+                "destination": "sleep_in_bed",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "go_entrace",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_entrace",
+                "destination": "pack_goods",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "pack_goods",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_bathroom_sink",
+                "destination": "use_the_computer",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "use_the_computer",
+                "destination": "drink_water",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "drink_water",
+                "destination": "go_to start",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_to start",
+                "destination": "clean",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "clean",
+                "destination": "go_wc",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_wc",
+                "destination": "close_windows",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "close_windows",
+                "destination": "get_clothes",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "get_clothes",
+                "destination": "change_clothes",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "go_book_shelf",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_book_shelf",
+                "destination": "wc_do",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "wc_do",
+                "destination": "get_glass",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "get_glass",
+                "destination": "rest_in_chair",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "rest_in_chair",
+                "destination": "go_computer",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_computer",
+                "destination": "do_exercise",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "do_exercise",
+                "destination": "open_windows",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "open_windows",
+                "destination": "go_bed",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_bed",
+                "destination": "go_wardrobe",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_wardrobe",
+                "destination": "go_windows",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_windows",
+                "destination": "lower_blinds",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "lower_blinds",
+                "destination": "get_water",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "get_water",
+                "destination": "interact_with_man",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "interact_with_man",
+                "destination": "go_kitchen_sink",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_kitchen_sink",
+                "destination": "get_bread",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "get_bread",
+                "destination": "go_chair",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "go_chair",
+                "destination": "eat_cold_meal",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "eat_cold_meal",
+                "destination": "wash_hands",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "wash_hands",
+                "destination": "wash_dishes",
+                "cluster_id": "1176821039104"
+            },
+            {
+                "source": "wash_dishes",
+                "destination": "go_exercise_place",
+                "cluster_id": "1176821039104"
+            }
+        ],
+        "found_relationships": 1,
+        "ratio_found": 0.016666666666666666,
+        "nmi": 0.4672423259177433,
+        "ari": 0.3847817813593051,
+        "f1": 0.0039081582804103565,
+        "accuracy": 0.34615384615384615,
+        "custom_found": 0.019230769230769232
+    },
+    {
+        "name": "A7_lpa_enhanced.txt",
+        "edges": [
+            {
+                "source": "go_wardrobe",
+                "destination": "close_windows",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "close_windows",
+                "destination": "use_the_computer",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "use_the_computer",
+                "destination": "get_food",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "get_food",
+                "destination": "get_clothes",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "get_clothes",
+                "destination": "do_exercise",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "do_exercise",
+                "destination": "sleep_in_bed",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "get_food_from_fridge",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "get_food_from_fridge",
+                "destination": "open_windows",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "open_windows",
+                "destination": "finish_walk",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "finish_walk",
+                "destination": "rest_in_chair",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "rest_in_chair",
+                "destination": "go_to start",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_to start",
+                "destination": "drink_water",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "drink_water",
+                "destination": "go_exercise_place",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_exercise_place",
+                "destination": "go_windows",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_windows",
+                "destination": "go_dining_table",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_dining_table",
+                "destination": "have_bath",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "have_bath",
+                "destination": "go_computer",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_computer",
+                "destination": "wc_flush",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "eat_cold_meal",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "eat_cold_meal",
+                "destination": "switch_computer_off",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "switch_computer_off",
+                "destination": "brush_teeth",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "brush_teeth",
+                "destination": "go_book_shelf",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_book_shelf",
+                "destination": "interact_with_man",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "interact_with_man",
+                "destination": "go_fridge",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_fridge",
+                "destination": "change_clothes",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "wc_do",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "wc_do",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_bathroom_sink",
+                "destination": "get_water",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "get_water",
+                "destination": "go_computer_chair",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "go_bathtub",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_bathtub",
+                "destination": "go_wc",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_wc",
+                "destination": "go_kitchen_shelf",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_kitchen_shelf",
+                "destination": "go_outside",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_outside",
+                "destination": "go_shoe_shelf",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_shoe_shelf",
+                "destination": "put_plate_to_sink",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "put_plate_to_sink",
+                "destination": "work",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "work",
+                "destination": "get_bread",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "get_bread",
+                "destination": "switch_computer_on",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "switch_computer_on",
+                "destination": "go_kitchen_sink",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_kitchen_sink",
+                "destination": "go_bed",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_bed",
+                "destination": "go_entrace",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_entrace",
+                "destination": "go_chair",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_chair",
+                "destination": "pack_goods",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "pack_goods",
+                "destination": "go_workplace",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_workplace",
+                "destination": "wash_hands",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "wash_hands",
+                "destination": "dress_up_outdoor",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "dress_up_outdoor",
+                "destination": "dress_down_outdoor",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "dress_down_outdoor",
+                "destination": "clean",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "clean",
+                "destination": "wash_dishes",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "wash_dishes",
+                "destination": "lower_blinds",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "lower_blinds",
+                "destination": "raise_blinds",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "raise_blinds",
+                "destination": "get_glass",
+                "cluster_id": "-2060451817"
+            }
+        ],
+        "found_relationships": 1,
+        "ratio_found": 0.016666666666666666,
+        "nmi": 0.5210471405130315,
+        "ari": 0.5356638890126703,
+        "f1": 0.000719165767709457,
+        "accuracy": 0.3269230769230769,
+        "custom_found": 0.0
+    },
+    {
+        "name": "A8_lpa_improved.txt",
+        "edges": [
+            {
+                "source": "get_glass",
+                "destination": "go_kitchen_shelf",
+                "cluster_id": "6"
+            },
+            {
+                "source": "get_food_from_fridge",
+                "destination": "go_fridge",
+                "cluster_id": "7"
+            },
+            {
+                "source": "have_bath",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "0"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "go_wc",
+                "cluster_id": "10"
+            },
+            {
+                "source": "go_wc",
+                "destination": "wc_do",
+                "cluster_id": "10"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "switch_computer_on",
+                "cluster_id": "2"
+            },
+            {
+                "source": "switch_computer_on",
+                "destination": "go_computer",
+                "cluster_id": "2"
+            },
+            {
+                "source": "go_computer",
+                "destination": "use_the_computer",
+                "cluster_id": "2"
+            },
+            {
+                "source": "dress_down_outdoor",
+                "destination": "change_clothes",
+                "cluster_id": "9"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "work",
+                "cluster_id": "9"
+            },
+            {
+                "source": "work",
+                "destination": "go_wardrobe",
+                "cluster_id": "9"
+            },
+            {
+                "source": "go_wardrobe",
+                "destination": "go_shoe_shelf",
+                "cluster_id": "9"
+            },
+            {
+                "source": "go_shoe_shelf",
+                "destination": "dress_up_outdoor",
+                "cluster_id": "9"
+            },
+            {
+                "source": "dress_up_outdoor",
+                "destination": "go_workplace",
+                "cluster_id": "9"
+            },
+            {
+                "source": "drink_water",
+                "destination": "eat_cold_meal",
+                "cluster_id": "8"
+            },
+            {
+                "source": "eat_cold_meal",
+                "destination": "get_water",
+                "cluster_id": "8"
+            },
+            {
+                "source": "get_water",
+                "destination": "go_kitchen_sink",
+                "cluster_id": "8"
+            },
+            {
+                "source": "raise_blinds",
+                "destination": "open_windows",
+                "cluster_id": "4"
+            },
+            {
+                "source": "go_chair",
+                "destination": "rest_in_chair",
+                "cluster_id": "11"
+            },
+            {
+                "source": "go_entrace",
+                "destination": "interact_with_man",
+                "cluster_id": "5"
+            },
+            {
+                "source": "go_outside",
+                "destination": "get_food",
+                "cluster_id": "1"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "go_bed",
+                "cluster_id": "3"
+            },
+            {
+                "source": "close_windows",
+                "destination": "lower_blinds",
+                "cluster_id": "12"
+            }
+        ],
+        "found_relationships": 17,
+        "ratio_found": 0.2833333333333333,
+        "nmi": 0.41931649844198937,
+        "ari": 0.018037757996674165,
+        "f1": 0.16195286195286196,
+        "accuracy": 0.5961538461538461,
+        "custom_found": 0.2692307692307692
+    },
+    {
+        "name": "A9_overlapping.txt",
+        "edges": [
+            {
+                "source": "have_bath",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "-1409245334"
+            },
+            {
+                "source": "go_chair",
+                "destination": "rest_in_chair",
+                "cluster_id": "-689898698"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "go_bed",
+                "cluster_id": "-1240726358"
+            },
+            {
+                "source": "go_bed",
+                "destination": "wc_flush",
+                "cluster_id": "-1240726358"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "go_wardrobe",
+                "cluster_id": "-1240726358"
+            },
+            {
+                "source": "go_wardrobe",
+                "destination": "go_wc",
+                "cluster_id": "-1240726358"
+            },
+            {
+                "source": "go_wc",
+                "destination": "wc_do",
+                "cluster_id": "-1240726358"
+            },
+            {
+                "source": "get_water",
+                "destination": "go_kitchen_sink",
+                "cluster_id": "-1118667707"
+            },
+            {
+                "source": "brush_teeth",
+                "destination": "go_computer_chair",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "go_bed",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_bed",
+                "destination": "finish_walk",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "finish_walk",
+                "destination": "get_water",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "get_water",
+                "destination": "go_kitchen_sink",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_kitchen_sink",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_bathroom_sink",
+                "destination": "drink_water",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "drink_water",
+                "destination": "change_clothes",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "go_kitchen_shelf",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_kitchen_shelf",
+                "destination": "switch_computer_on",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "switch_computer_on",
+                "destination": "go_entrace",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_entrace",
+                "destination": "go_fridge",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_fridge",
+                "destination": "wc_flush",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "go_wardrobe",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_wardrobe",
+                "destination": "dress_up_outdoor",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "dress_up_outdoor",
+                "destination": "put_plate_to_sink",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "put_plate_to_sink",
+                "destination": "interact_with_man",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "interact_with_man",
+                "destination": "switch_computer_off",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "switch_computer_off",
+                "destination": "go_workplace",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_workplace",
+                "destination": "have_bath",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "have_bath",
+                "destination": "rest_in_chair",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "rest_in_chair",
+                "destination": "go_bathtub",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_bathtub",
+                "destination": "go_chair",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_chair",
+                "destination": "dress_down_outdoor",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "dress_down_outdoor",
+                "destination": "get_food_from_fridge",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "get_food_from_fridge",
+                "destination": "get_bread",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "get_bread",
+                "destination": "get_clothes",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "get_clothes",
+                "destination": "work",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "work",
+                "destination": "wash_hands",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "wash_hands",
+                "destination": "sleep_in_bed",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "get_glass",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "get_glass",
+                "destination": "go_computer",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_computer",
+                "destination": "go_shoe_shelf",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_shoe_shelf",
+                "destination": "use_the_computer",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "use_the_computer",
+                "destination": "go_wc",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_wc",
+                "destination": "go_dining_table",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_dining_table",
+                "destination": "eat_cold_meal",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "eat_cold_meal",
+                "destination": "wc_do",
+                "cluster_id": "-2060451817"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "switch_computer_on",
+                "cluster_id": "-1249204078"
+            },
+            {
+                "source": "switch_computer_on",
+                "destination": "go_computer",
+                "cluster_id": "-1249204078"
+            },
+            {
+                "source": "go_computer",
+                "destination": "use_the_computer",
+                "cluster_id": "-1249204078"
+            },
+            {
+                "source": "go_outside",
+                "destination": "get_food",
+                "cluster_id": "-572817074"
+            },
+            {
+                "source": "clean",
+                "destination": "go_book_shelf",
+                "cluster_id": "94746185"
+            },
+            {
+                "source": "go_computer_chair",
+                "destination": "use_the_computer",
+                "cluster_id": "-805655336"
+            },
+            {
+                "source": "wash_dishes",
+                "destination": "go_chair",
+                "cluster_id": "-429054616"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "go_wardrobe",
+                "cluster_id": "-224568113"
+            },
+            {
+                "source": "go_bathtub",
+                "destination": "brush_teeth",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "brush_teeth",
+                "destination": "dress_down_outdoor",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "dress_down_outdoor",
+                "destination": "get_clothes",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "get_clothes",
+                "destination": "work",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "work",
+                "destination": "go_bed",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "go_bed",
+                "destination": "finish_walk",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "finish_walk",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "go_bathroom_sink",
+                "destination": "change_clothes",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "change_clothes",
+                "destination": "go_wardrobe",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "go_wardrobe",
+                "destination": "go_shoe_shelf",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "go_shoe_shelf",
+                "destination": "dress_up_outdoor",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "dress_up_outdoor",
+                "destination": "go_workplace",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "go_workplace",
+                "destination": "have_bath",
+                "cluster_id": "-1865426433"
+            },
+            {
+                "source": "get_food_from_fridge",
+                "destination": "go_fridge",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_fridge",
+                "destination": "wash_hands",
+                "cluster_id": "-1950052284"
+            },
+            {
+                "source": "go_entrace",
+                "destination": "interact_with_man",
+                "cluster_id": "-1058360859"
+            },
+            {
+                "source": "get_food_from_fridge",
+                "destination": "go_fridge",
+                "cluster_id": "136388924"
+            },
+            {
+                "source": "raise_blinds",
+                "destination": "open_windows",
+                "cluster_id": "-280653967"
+            },
+            {
+                "source": "switch_computer_off",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "-1563599498"
+            },
+            {
+                "source": "close_windows",
+                "destination": "lower_blinds",
+                "cluster_id": "600026940"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "go_wc",
+                "cluster_id": "98524547"
+            },
+            {
+                "source": "go_wc",
+                "destination": "wc_do",
+                "cluster_id": "98524547"
+            },
+            {
+                "source": "sleep_in_bed",
+                "destination": "do_exercise",
+                "cluster_id": "-1792797940"
+            },
+            {
+                "source": "do_exercise",
+                "destination": "wc_flush",
+                "cluster_id": "-1792797940"
+            },
+            {
+                "source": "wc_flush",
+                "destination": "go_wc",
+                "cluster_id": "-1792797940"
+            },
+            {
+                "source": "go_wc",
+                "destination": "wc_do",
+                "cluster_id": "-1792797940"
+            },
+            {
+                "source": "wc_do",
+                "destination": "go_bathroom_sink",
+                "cluster_id": "-1792797940"
+            },
+            {
+                "source": "go_kitchen_shelf",
+                "destination": "get_glass",
+                "cluster_id": "-318998856"
+            }
+        ],
+        "found_relationships": 29,
+        "ratio_found": 0.48333333333333334,
+        "nmi": 0.3987377854536114,
+        "ari": 0.13792185860099482,
+        "f1": 0.2230993366338784,
+        "accuracy": 0.6538461538461539,
+        "custom_found": 0.34615384615384615
+    }
+]

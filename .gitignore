@@ -18,3 +18,4 @@ data/sorted_logfile.csv
 lib/
 
 .venv/
+__pycache__

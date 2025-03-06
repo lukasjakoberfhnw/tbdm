@@ -1,0 +1,132 @@
+[
+    {
+        "name": "A1_activity_clustering.txt",
+        "found_relationships": 31,
+        "ratio_found": 0.5166666666666667,
+        "nmi": 0.5581547370857057,
+        "ari": 0.08189621711648346,
+        "f1": 0.4025757575757576,
+        "accuracy": 0.75,
+        "custom_found": 0.4423076923076923
+    },
+    {
+        "name": "A9_overlapping.txt",
+        "found_relationships": 29,
+        "ratio_found": 0.48333333333333334,
+        "nmi": 0.3987377854536114,
+        "ari": 0.13792185860099482,
+        "f1": 0.2230993366338784,
+        "accuracy": 0.6538461538461539,
+        "custom_found": 0.34615384615384615
+    },
+    {
+        "name": "A8_lpa_improved.txt",
+        "found_relationships": 17,
+        "ratio_found": 0.2833333333333333,
+        "nmi": 0.41931649844198937,
+        "ari": 0.018037757996674165,
+        "f1": 0.16195286195286196,
+        "accuracy": 0.5961538461538461,
+        "custom_found": 0.2692307692307692
+    },
+    {
+        "name": "A2_activity_neighbourhood.txt",
+        "found_relationships": 16,
+        "ratio_found": 0.26666666666666666,
+        "nmi": 0.41809550437275994,
+        "ari": -0.056843232906304504,
+        "f1": 0.10609756097560975,
+        "accuracy": 0.5384615384615384,
+        "custom_found": 0.21153846153846154
+    },
+    {
+        "name": "A10_aggregated.txt",
+        "found_relationships": 7,
+        "ratio_found": 0.11666666666666667,
+        "nmi": 0.5278088641478063,
+        "ari": 0.4625760890511114,
+        "f1": 0.06898656898656899,
+        "accuracy": 0.46153846153846156,
+        "custom_found": 0.1346153846153846
+    },
+    {
+        "name": "A4_iot_graph_processing.txt",
+        "found_relationships": 7,
+        "ratio_found": 0.11666666666666667,
+        "nmi": 0.4392573450063751,
+        "ari": 0.09291370834887143,
+        "f1": 0.01870748299319728,
+        "accuracy": 0.4423076923076923,
+        "custom_found": 0.11538461538461539
+    },
+    {
+        "name": "A11_simple_random_walk_clusters.txt",
+        "found_relationships": 4,
+        "ratio_found": 0.06666666666666667,
+        "nmi": 0.49595626589075414,
+        "ari": 0.5210118090428669,
+        "f1": 0.00261437908496732,
+        "accuracy": 0.34615384615384615,
+        "custom_found": 0.038461538461538464
+    },
+    {
+        "name": "A12_process_mining.txt",
+        "found_relationships": 1,
+        "ratio_found": 0.016666666666666666,
+        "nmi": 0.3617981310492105,
+        "ari": -0.11231787062107262,
+        "f1": 0.011764705882352941,
+        "accuracy": 0.3269230769230769,
+        "custom_found": 0.019230769230769232
+    },
+    {
+        "name": "A6_graphframes_louvain.txt",
+        "found_relationships": 1,
+        "ratio_found": 0.016666666666666666,
+        "nmi": 0.4672423259177433,
+        "ari": 0.3847817813593051,
+        "f1": 0.0039081582804103565,
+        "accuracy": 0.34615384615384615,
+        "custom_found": 0.019230769230769232
+    },
+    {
+        "name": "A3_graphx_connectedcomponents.txt",
+        "found_relationships": 0,
+        "ratio_found": 0.0,
+        "nmi": 0.4807448901859953,
+        "ari": 0.36222297390411046,
+        "f1": 0.0,
+        "accuracy": 0.3269230769230769,
+        "custom_found": 0.0
+    },
+    {
+        "name": "A5__lpa_clusters.txt",
+        "found_relationships": 0,
+        "ratio_found": 0.0,
+        "nmi": 0.0,
+        "ari": 0.0,
+        "f1": 0.0,
+        "accuracy": 0.3269230769230769,
+        "custom_found": 0.0
+    },
+    {
+        "name": "A5__scc_clusters.txt",
+        "found_relationships": 0,
+        "ratio_found": 0.0,
+        "nmi": 0.0,
+        "ari": 0.0,
+        "f1": 0.0,
+        "accuracy": 0.3269230769230769,
+        "custom_found": 0.0
+    },
+    {
+        "name": "A7_lpa_enhanced.txt",
+        "found_relationships": 1,
+        "ratio_found": 0.016666666666666666,
+        "nmi": 0.5210471405130315,
+        "ari": 0.5356638890126703,
+        "f1": 0.000719165767709457,
+        "accuracy": 0.3269230769230769,
+        "custom_found": 0.0
+    }
+]
