@@ -10,6 +10,14 @@ class Edge:
     def __str__(self):
         return self.source + " -> " + self.destination + " (" + self.relationship + ")"
 
+    def __eq__(self, other):
+        if isinstance(other, Edge):
+            return (self.source, self.destination) == (other.source, other.destination)
+        return False
+    
+    def __hash__(self):
+        return hash((self.source, self.destination))
+
 class TestResult:
     def __init__(self, name: str, edges: list[Edge]):
         self.name = name
@@ -64,9 +72,32 @@ def get_cluster_result(file_path: str):
 
     return enhanced_edges
 
+def check_commonality(ground_edges, test_edges, directional=False):
+    found: int = 0
+    total: int = 0
+
+    if not directional:
+        for edge in ground_edges:
+            total += 1
+            for test in test_edges:
+                if (edge.source == test.source and edge.destination == test.destination) or (edge.destination == test.source and edge.source == test.destination):
+                    # print("Commonality found")
+                    found += 1
+                    continue
+    else:
+        for edge in ground_edges:
+            total += 1
+            for test in test_edges:
+                if edge.source == test.source and edge.destination == test.destination:
+                    # print("Commonality found")
+                    found += 1
+                    continue
+
+    return found, total
+
 def main():
     ground_edges = get_ground_truth()
-
+    
     test_results: list[TestResult] = []
 
     file_names = os.listdir("./results")
@@ -74,9 +105,36 @@ def main():
         loaded_edges = get_cluster_result("./results/" + file_name)
         test_results.append(TestResult(file_name, loaded_edges))
 
-    print(ground_edges)
-    print(test_results[0].name)
-    print(test_results[0].edges[0])
+    # print(ground_edges)
+    # print(test_results[0].name)
+    # print(test_results[0].edges[0])
+
+    test_results.sort(key=lambda x: x.name)
+
+    # compare the edges and see how many we have found
+    for test in test_results:
+        found, total = check_commonality(ground_edges, test.edges)
+        print(test.name)
+        print("Relationships found: " + str(found))
+        print("Total Relationships: " + str(total))
+        print("Ratio: " + str(found/total))
+
+    # A1_activity_clustering.txt
+    # 132
+    # 60
+    # 2.2
+
+    # remove duplicated for testing non-overlapping...
+    # processed_ground_truth = list(set(ground_edges))
+    # print(len(processed_ground_truth))
+
+    # found, total = check_commonality(processed_ground_truth, test_results[0].edges)
+            
+    # print(test_results[0].name)
+    # print(found)
+    # print(total)
+    # print(found/total)
+
 
 
 if __name__ == "__main__":
